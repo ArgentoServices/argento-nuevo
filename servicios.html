@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Argento | Nuestros Servicios</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+    <style>
+        :root {
+            --azul-argento: #5d8896;
+            --azul-oscuro: #2c3e50;
+        }
+        body { font-family: 'Roboto', sans-serif; color: var(--azul-oscuro); background-color: #f8f9fa; }
+        h1, h2, h3, h5, .nav-link, .btn { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+
+        /* Navegación */
+        .navbar { background-color: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .nav-link.menu-link { color: var(--azul-argento) !important; text-transform: uppercase; font-size: 0.85rem; font-weight: bold; letter-spacing: 1px; }
+        .nav-link.menu-link:hover { color: var(--azul-oscuro) !important; }
+
+        /* Cabecera Interna */
+        .page-header { background: linear-gradient(45deg, var(--azul-oscuro), var(--azul-argento)); color: white; padding: 100px 0 50px; text-align: center; }
+        
+        /* Diseño de Pestañas (Tabs) */
+        .nav-tabs { border-bottom: 2px solid #dee2e6; margin-bottom: 30px; justify-content: center; }
+        .nav-tabs .nav-link { 
+            color: #6c757d; 
+            border: none; 
+            border-bottom: 3px solid transparent; 
+            font-size: 1.1rem; 
+            padding: 10px 20px; 
+            transition: all 0.3s;
+        }
+        .nav-tabs .nav-link:hover { color: var(--azul-argento); }
+        .nav-tabs .nav-link.active { 
+            color: var(--azul-oscuro); 
+            border-bottom: 3px solid var(--azul-argento); 
+            background: transparent;
+        }
+
+        /* Tarjetas de Servicio */
+        .service-card { border: none; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.2s; height: 100%; }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .service-icon { font-size: 2.5rem; color: var(--azul-argento); margin-bottom: 15px; }
+        
+        /* Etiquetas de Tecnología */
+        .badge-tech { background-color: #e9ecef; color: var(--azul-oscuro); font-weight: 400; font-size: 0.85rem; padding: 6px 12px; margin: 3px; border-radius: 20px; border: 1px solid #ced4da; }
+
+        /* Footer */
+        footer { background-color: var(--azul-argento); color: white; padding: 60px 0; margin-top: 80px; }
+        footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo-argento.png" alt="Argento" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link menu-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link menu-link" href="nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link menu-link" href="servicios.html">Servicios</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link menu-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Soluciones</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="soluciones.html#cms">CMS Central</a></li>
+                            <li><a class="dropdown-item" href="soluciones.html#sai">SAI Inmobiliaria</a></li>
+                            <li><a class="dropdown-item" href="soluciones.html#scg">SCG Gestión</a></li>
+                            <li><a class="dropdown-item" href="soluciones.html#carto">CARTO</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link menu-link" href="proyectos.html">Proyectos</a></li>
+                    <li class="nav-item ms-2"><a class="btn btn-dark rounded-pill px-4" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container mt-4">
+            <h1 class="display-4 text-uppercase">Nuestros Servicios</h1>
+            <p class="lead">Ofrecemos servicios profesionales que resuelven las necesidades de su negocio.</p>
+        </div>
+    </header>
+
+    <section class="container py-5">
+        
+        <ul class="nav nav-tabs flex-wrap" id="serviciosTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="desarrollo-tab" data-bs-toggle="tab" data-bs-target="#desarrollo" type="button" role="tab">Desarrollo</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="web-tab" data-bs-toggle="tab" data-bs-target="#web" type="button" role="tab">Web y Apps</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="bd-tab" data-bs-toggle="tab" data-bs-target="#bd" type="button" role="tab">Bases de Datos</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="servidores-tab" data-bs-toggle="tab" data-bs-target="#servidores" type="button" role="tab">Servidores</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="innovacion-tab" data-bs-toggle="tab" data-bs-target="#innovacion" type="button" role="tab">Innovación</button>
+            </li>
+        </ul>
+
+        <div class="tab-content mt-4" id="serviciosTabContent">
+            
+            <div class="tab-pane fade show active" id="desarrollo" role="tabpanel">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card service-card p-4">
+                            <i class="bi bi-code-slash service-icon"></i>
+                            <h4>Desarrollo de Sistemas</h4>
+                            <p>Desarrollo de sistemas a la medida; mantenimiento de sistemas legados, reingeniería de sistemas y procesos.</p>
+                            <div class="mt-3">
+                                <span class="badge-tech">Java</span>
+                                <span class="badge-tech">.NET</span>
+                                <span class="badge-tech">PHP</span>
+                                <span class="badge-tech">Python</span>
+                                <span class="badge-tech">Oracle EBS</span>
+                                <span class="badge-tech">SAP (Flex y ABAP)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card service-card p-4">
+                            <i class="bi bi-clock-history service-icon"></i>
+                            <h4>Mantenimiento de Sistemas Legados</h4>
+                            <p>Actualización, soporte y migración de tecnologías anteriores asegurando la continuidad de tu negocio.</p>
+                            <div class="mt-3">
+                                <span class="badge-tech">Clipper</span>
+                                <span class="badge-tech">Dbase</span>
+                                <span class="badge-tech">FoxPro / Visual FoxPro</span>
+                                <span class="badge-tech">Cobol</span>
+                                <span class="badge-tech">Crystal Reports</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="web" role="tabpanel">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card service-card p-4">
+                            <i class="bi bi-laptop service-icon"></i>
+                            <h4>Páginas y Plataformas Web</h4>
+                            <p>Diseño y desarrollo de sitios estáticos y dinámicos, Sistemas de Gestión de Contenido (CMS) personalizados y testing.</p>
+                            <div class="mt-3">
+                                <span class="badge-tech">HTML5</span>
+                                <span class="badge-tech">JavaScript</span>
+                                <span class="badge-tech">CMS</span>
+                                <span class="badge-tech">Web Testing</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card service-card p-4">
+                            <i class="bi bi-phone service-icon"></i>
+                            <h4>Aplicaciones Móviles</h4>
+                            <p>Evoluciona tu empresa con una aplicación móvil diseñada a tu medida y de tu infraestructura.</p>
+                            <div class="mt-3">
+                                <span class="badge-tech">iOS (Swift)</span>
+                                <span class="badge-tech">Android (Java)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="bd" role="tabpanel">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card service-card p-4 text-center">
+                            <i class="bi bi-database-check service-icon"></i>
+                            <h4>Servicios de Datos</h4>
+                            <p>Instalación, administración, mantenimiento, migración, planeación de información y minería de datos en diferentes motores.</p>
+                            <div class="mt-3 d-flex flex-wrap justify-content-center">
+                                <span class="badge-tech">Oracle</span>
+                                <span class="badge-tech">SQL Server</span>
+                                <span class="badge-tech">PostgreSQL</span>
+                                <span class="badge-tech">MySQL</span>
+                                <span class="badge-tech">MongoDB</span>
+                                <span class="badge-tech">MariaDB</span>
+                                <span class="badge-tech">Database Tuning</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="servidores" role="tabpanel">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card service-card p-4">
+                            <i class="bi bi-hdd-network service-icon"></i>
+                            <h4>Administración e Instalación</h4>
+                            <p>Configuración y mantenimiento de infraestructura física y virtual. Análisis de rendimiento.</p>
+                            <div class="mt-3">
+                                <span class="badge-tech">Servidores Físicos</span>
+                                <span class="badge-tech">Servidores Virtuales</span>
+                                <span class="badge-tech">VMWare</span>
+                                <span class="badge-tech">XEN</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card service-card p-4">
+                            <i class="bi bi-cloud-arrow-up service-icon"></i>
+                            <h4>Migración a la Nube</h4>
+                            <p>Migración de servidores a entornos de nube pública, privada o híbrida garantizando seguridad y escalabilidad.</p>
+                            <div class="mt-3">
+                                <span class="badge-tech">Amazon Web Services (AWS)</span>
+                                <span class="badge-tech">Google Cloud</span>
+                                <span class="badge-tech">MS Azure</span>
+                                <span class="badge-tech">Oracle Cloud</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>

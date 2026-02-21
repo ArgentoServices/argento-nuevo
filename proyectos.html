@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Argento | Proyectos y Casos de Éxito</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+    <style>
+        :root {
+            --azul-argento: #5d8896;
+            --azul-oscuro: #2c3e50;
+        }
+        body { font-family: 'Roboto', sans-serif; color: var(--azul-oscuro); background-color: #f8f9fa; }
+        h1, h2, h3, h5, .nav-link, .btn { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+
+        /* Navegación */
+        .navbar { background-color: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .nav-link.menu-link { color: var(--azul-argento) !important; text-transform: uppercase; font-size: 0.85rem; font-weight: bold; letter-spacing: 1px; }
+        .nav-link.menu-link:hover { color: var(--azul-oscuro) !important; }
+
+        /* Cabecera Interna */
+        .page-header { background: linear-gradient(45deg, var(--azul-oscuro), var(--azul-argento)); color: white; padding: 100px 0 50px; text-align: center; }
+        
+        /* Tarjetas de Proyecto */
+        .project-card { border: none; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: transform 0.3s ease; height: 100%; display: flex; flex-direction: column; }
+        .project-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
+        .project-img { height: 220px; background-color: #e9ecef; object-fit: cover; width: 100%; display: flex; align-items: center; justify-content: center; color: #adb5bd; font-size: 3rem;}
+        .project-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+        
+        /* Etiquetas de Tecnología (Lo que platicamos) */
+        .tech-tags { margin-top: auto; margin-bottom: 15px; }
+        .badge-tech { background-color: #e2e8f0; color: #475569; font-weight: 500; font-size: 0.75rem; padding: 5px 10px; margin: 2px 2px 0 0; border-radius: 4px; display: inline-block; }
+
+        /* Botón Caso de Éxito */
+        .btn-story { background-color: transparent; color: var(--azul-argento); border: 2px solid var(--azul-argento); border-radius: 50px; font-size: 0.9rem; padding: 8px 20px; transition: all 0.3s; align-self: flex-start; }
+        .btn-story:hover { background-color: var(--azul-argento); color: white; }
+
+        /* Footer */
+        footer { background-color: var(--azul-argento); color: white; padding: 60px 0; margin-top: 80px; }
+        footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo-argento.png" alt="Argento" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link menu-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link menu-link" href="nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link menu-link" href="servicios.html">Servicios</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link menu-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Soluciones</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="soluciones.html#cms">CMS Central</a></li>
+                            <li><a class="dropdown-item" href="soluciones.html#sai">SAI Inmobiliaria</a></li>
+                            <li><a class="dropdown-item" href="soluciones.html#scg">SCG Gestión</a></li>
+                            <li><a class="dropdown-item" href="soluciones.html#carto">CARTO</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link menu-link active" href="proyectos.html">Proyectos</a></li>
+                    <li class="nav-item ms-2"><a class="btn btn-dark rounded-pill px-4" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container mt-4">
+            <h1 class="display-4 text-uppercase">Casos de Éxito</h1>
+            <p class="lead">Conoce cómo hemos transformado operaciones en el sector público y privado.</p>
+        </div>
+    </header>
+
+    <section class="container py-5">
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card project-card">
+                    <div class="project-img"><i class="bi bi-building"></i></div>
+                    
+                    <div class="project-body">
+                        <p class="text-muted small text-uppercase mb-1"><i class="bi bi-tag-fill text-secondary"></i> Sector Público</p>
+                        <h4 class="card-title mb-2">Recaudación Predial</h4>
+                        <p class="small fw-bold text-secondary mb-3">Cliente: Gobierno de la CDMX (Sec. Finanzas)</p>
+                        <p class="card-text small mb-4">Fortalecimiento de las finanzas públicas mediante la automatización y digitalización del sistema de recaudación.</p>
+                        
+                        <div class="tech-tags">
+                            <span class="badge-tech">Gestión Inmobiliaria</span>
+                            <span class="badge-tech">Apps Móviles</span>
+                            <span class="badge-tech">Biometría</span>
+                        </div>
+                        
+                        <button class="btn btn-story mt-3" data-bs-toggle="modal" data-bs-target="#modalProyecto1">
+                            Leer historia <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card project-card">
+                    <div class="project-img"><i class="bi bi-graph-up-arrow"></i></div>
+                    <div class="project-body">
+                        <p class="text-muted small text-uppercase mb-1"><i class="bi bi-tag-fill text-secondary"></i> Sector Público</p>
+                        <h4 class="card-title mb-2">SAP GRP Planeación</h4>
+                        <p class="small fw-bold text-secondary mb-3">Cliente: Gobierno de la CDMX</p>
+                        <p class="card-text small mb-4">Mesa de soporte técnico GRP-SAP para más de 100 unidades ejecutoras del gasto público.</p>
+                        
+                        <div class="tech-tags">
+                            <span class="badge-tech"><img src="sap.png" alt="SAP" width="12" style="display:none;"> SAP</span>
+                            <span class="badge-tech">LGCG</span>
+                            <span class="badge-tech">OCDS</span>
+                        </div>
+                        
+                        <button class="btn btn-story mt-3" data-bs-toggle="modal" data-bs-target="#modalProyecto2">
+                            Leer historia <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card project-card">
+                    <div class="project-img"><i class="bi bi-server"></i></div>
+                    <div class="project-body">
+                        <p class="text-muted small text-uppercase mb-1"><i class="bi bi-tag-fill text-secondary"></i> Sector Privado</p>
+                        <h4 class="card-title mb-2">Instalación SAP ECC</h4>
+                        <p class="small fw-bold text-secondary mb-3">Cliente: Grupo Modelo / AVNET</p>
+                        <p class="card-text small mb-4">Administración, implementación y configuración High Availability de entorno SAP corporativo.</p>
+                        
+                        <div class="tech-tags">
+                            <span class="badge-tech">SAP ECC 6.0</span>
+                            <span class="badge-tech">SAP Netweaver</span>
+                            <span class="badge-tech">High Availability</span>
+                        </div>
+                        
+                        <button class="btn btn-story mt-3" data-bs-toggle="modal" data-bs-target="#modalProyecto3">
+                            Leer historia <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card project-card">
+                    <div class="project-img"><i class="bi bi-database"></i></div>
+                    <div class="project-body">
+                        <p class="text-muted small text-uppercase mb-1"><i class="bi bi-tag-fill text-secondary"></i> Sector Privado</p>
+                        <h4 class="card-title mb-2">Instalación SAP BW & BO</h4>
+                        <p class="small fw-bold text-secondary mb-3">Cliente: Telcel / AVNET</p>
+                        <p class="card-text small mb-4">Implementación de bases de datos DB2, HP-UX y ecosistema analítico SAP Business Objects.</p>
+                        
+                        <div class="tech-tags">
+                            <span class="badge-tech">DB2 Database</span>
+                            <span class="badge-tech">HP-UX</span>
+                            <span class="badge-tech">SAP BW 7.0</span>
+                        </div>
+                        
+                        <button class="btn btn-story mt-3" data-bs-toggle="modal" data-bs-target="#modalProyecto4">
+                            Leer historia <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="modal fade" id="modalProyecto1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-light">
+                    <h5 class="modal-title text-primary">Recaudación Predial - CDMX</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <h6 class="text-uppercase text-secondary fw-bold mb-2">El Reto</h6>
+                    <p>Aumentar la recaudación en la CDMX en el periodo 2009 - 2017 otorgando al ciudadano servicios las 24 horas del día.</p>
+                    
+                    <h6 class="text-uppercase text-secondary fw-bold mb-2 mt-4">La Solución</h6>
+                    <p>Crear, actualizar, digitalizar e integrar los sistemas de recaudación, cartografía y bases de datos, incorporando un mayor control administrativo y territorial.</p>
+
+                    <h6 class="text-uppercase text-success fw-bold mb-2 mt-4"><i class="bi bi-check-circle-fill"></i> Beneficios Obtenidos</h6>
+                    <ul class="mb-0">
+                        <li>Automatización de los procesos de predial.</li>
+                        <li>Servicios en línea de cobro de impuestos y App de recaudación.</li>
+                        <li>Beneficios de Biometría de voz a adultos mayores.</li>
+                        <li>Mayor cobertura de pago con terceros.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalProyecto2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-light">
+                    <h5 class="modal-title text-primary">SAP GRP Planeación - CDMX</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <h6 class="text-uppercase text
