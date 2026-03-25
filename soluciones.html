@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Argento | Nuestras Soluciones</title>
-    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="icon" href="img/favicon.png" type="image/png">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -16,32 +16,27 @@
             --azul-oscuro: #2c3e50;
             --verde-acento: #25d366;
         }
-        /* Desplazamiento suave para los links del menú */
         html { scroll-behavior: smooth; }
         
         body { font-family: 'Roboto', sans-serif; color: var(--azul-oscuro); background-color: #f8f9fa; }
         h1, h2, h3, h4, h5, .nav-link, .btn { font-family: 'Montserrat', sans-serif; font-weight: 700; }
 
-        /* Navegación */
         .navbar { background-color: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
         .nav-link.menu-link { color: var(--azul-argento) !important; text-transform: uppercase; font-size: 0.85rem; font-weight: bold; letter-spacing: 1px; }
         .nav-link.menu-link:hover { color: var(--azul-oscuro) !important; }
 
-        /* Cabecera Interna */
         .page-header { background: linear-gradient(45deg, var(--azul-oscuro), var(--azul-argento)); color: white; padding: 100px 0 50px; text-align: center; }
         
-        /* Secciones de Soluciones */
         .solucion-section { 
             padding: 80px 0; 
             background-color: #fff; 
             border-bottom: 1px solid #eee;
-            /* Esto evita que el menú fijo tape el título al hacer scroll */
             scroll-margin-top: 80px; 
         }
-        .solucion-section:nth-child(even) { background-color: #f8f9fa; } /* Alternar colores de fondo */
+        .solucion-section:nth-child(even) { background-color: #f8f9fa; }
         
         .solucion-img { 
-            background-color: #e9ecef; 
+            background-color: #f8fafc; 
             border-radius: 15px; 
             height: 400px; 
             display: flex; 
@@ -49,26 +44,38 @@
             justify-content: center; 
             color: #adb5bd; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            overflow: hidden;
+            padding: 20px;
+        }
+        
+        .solucion-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.4s ease;
+        }
+        
+        .solucion-section:hover .solucion-img img {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.05);
         }
         
         .feature-list li { margin-bottom: 10px; display: flex; align-items: flex-start; }
         .feature-list i { color: var(--azul-argento); font-size: 1.2rem; margin-right: 15px; }
 
-        /* Tarjetas de Soluciones Extra (ERP / RRHH) */
-        .extra-card { border: none; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); height: 100%; transition: transform 0.3s; }
-        .extra-card:hover { transform: translateY(-5px); }
-
-        /* Footer */
         footer { background-color: var(--azul-argento); color: white; padding: 60px 0; }
         footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg fixed-top">
+<nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="logo-argento.png" alt="Argento" height="50">
+                <img src="img/logo-argento.png" alt="Argento" height="50">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -76,17 +83,29 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav align-items-center">
                     <li class="nav-item"><a class="nav-link menu-link" href="index.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link menu-link" href="nosotros.html">Nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link menu-link" href="servicios.html">Servicios</a></li>
+                    
                     <li class="nav-item dropdown">
-                        <a class="nav-link menu-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Soluciones</a>
+                        <a class="nav-link menu-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Nosotros</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#cms">CMS Central</a></li>
-                            <li><a class="dropdown-item" href="#sai">SAI Inmobiliaria</a></li>
-                            <li><a class="dropdown-item" href="#scg">SCG Gestión</a></li>
-                            <li><a class="dropdown-item" href="#carto">CARTO</a></li>
+                            <li><a class="dropdown-item" href="nosotros.html">Quiénes Somos</a></li>
+                            <li><a class="dropdown-item" href="clientes.html">Nuestros Clientes</a></li>
+                            <li><a class="dropdown-item" href="partners.html">Partners y Alianzas</a></li>
                         </ul>
                     </li>
+
+                    <li class="nav-item"><a class="nav-link menu-link" href="servicios.html">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link menu-link" href="tecnologias.html">Tecnologías</a></li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link menu-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Soluciones</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="soluciones.html#cms">CMS Central</a></li>
+                            <li><a class="dropdown-item" href="soluciones.html#sai">SAI Inmobiliaria</a></li>
+                            <li><a class="dropdown-item" href="soluciones.html#scg">SCG Gestión</a></li>
+                            <li><a class="dropdown-item" href="soluciones.html#carto">CARTO</a></li>
+                        </ul>
+                    </li>
+                    
                     <li class="nav-item"><a class="nav-link menu-link" href="proyectos.html">Proyectos</a></li>
                     <li class="nav-item ms-2"><a class="btn btn-dark rounded-pill px-4" href="contacto.html">Contacto</a></li>
                 </ul>
@@ -119,7 +138,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="solucion-img">
-                        <i class="bi bi-window-sidebar" style="font-size: 5rem;"></i><span class="ms-3 fs-4">Imagen CMS Central</span>
+                        <img src="img/CMS.png" alt="CMS Central" onerror="this.style.display='none'">
                     </div>
                 </div>
             </div>
@@ -130,20 +149,20 @@
         <div class="container">
             <div class="row align-items-center flex-lg-row-reverse">
                 <div class="col-lg-6 mb-4 mb-lg-0">
-                    <div class="text-uppercase text-muted small fw-bold mb-2">Gestión Tributaria</div>
+                    <div class="text-uppercase text-muted small fw-bold mb-2">Gestión Tributaria y e-Finanzas</div>
                     <h2 class="display-5 mb-4" style="color: var(--azul-oscuro);">SAI Inmobiliaria</h2>
-                    <p class="lead">Sistema multiplataforma de Control Predial y Recaudación.</p>
-                    <p>Aplicación modular para el manejo integral de los servicios prediales: recursos, recaudación, trámites y contribuyentes. Desarrollado en módulos interconectables que tienen como finalidad un óptimo manejo de los servicios e ingresos gubernamentales.</p>
+                    <p class="lead">Sistema multiplataforma de Control Predial y Recaudación omnicanal.</p>
+                    <p>Aplicación modular para el manejo integral de los servicios prediales: recursos, recaudación, trámites y contribuyentes. Desarrollado en módulos interconectables que tienen como finalidad un óptimo manejo de los servicios e incremento de ingresos gubernamentales (PIBE).</p>
                     
                     <ul class="list-unstyled feature-list mt-4">
-                        <li><i class="bi bi-check-circle-fill"></i> <div><strong>Módulos Básicos Internos:</strong> Control de catastro, tipo de suelo y padrón de contribuyentes.</div></li>
-                        <li><i class="bi bi-check-circle-fill"></i> <div><strong>Control y Recaudación:</strong> Gestión transparente de recursos financieros.</div></li>
-                        <li><i class="bi bi-check-circle-fill"></i> <div><strong>Módulos Públicos:</strong> Portal ciudadano para trámites, servicios y consultas de situación predial.</div></li>
+                        <li><i class="bi bi-check-circle-fill"></i> <div><strong>Módulos Básicos Internos:</strong> Control territorial preciso, tipo de suelo y padrón de contribuyentes.</div></li>
+                        <li><i class="bi bi-check-circle-fill"></i> <div><strong>Control y Recaudación:</strong> Gestión transparente de recursos financieros con detección de omisos.</div></li>
+                        <li><i class="bi bi-check-circle-fill"></i> <div><strong>Módulos Públicos:</strong> Portal ciudadano 24/7/365 para trámites, servicios y consultas de situación predial.</div></li>
                     </ul>
                 </div>
                 <div class="col-lg-6">
                     <div class="solucion-img">
-                        <i class="bi bi-building-gear" style="font-size: 5rem;"></i><span class="ms-3 fs-4">Imagen SAI</span>
+                        <img src="img/SAI_inmobiliaria.png" alt="SAI Inmobiliaria" onerror="this.style.display='none'">
                     </div>
                 </div>
             </div>
@@ -156,9 +175,61 @@
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <div class="text-uppercase text-muted small fw-bold mb-2">Administración y Procesos</div>
                     <h2 class="display-5 mb-4" style="color: var(--azul-oscuro);">Sistema de Control de Gestión (SCG)</h2>
-                    <p class="lead">Aplicación de Gestión Documental para la optimización del flujo informativo.</p>
-                    <p>Facilita a los usuarios de diferentes departamentos de una empresa o dependencia la transmisión de documentos entre áreas, poder turnarlos a través de su estructura jerárquica, y llevar un seguimiento detallado con reportes de productividad.</p>
+                    <p class="lead">Aplicación de Gestión Documental para la optimización del flujo informativo y reducción burocrática.</p>
+                    <p>Facilita a los usuarios de diferentes departamentos de una empresa o dependencia la transmisión de documentos entre áreas, poder turnarlos a través de su estructura jerárquica, y llevar un seguimiento detallado con reportes de productividad en tiempo real.</p>
                     
                     <ul class="list-unstyled feature-list mt-4">
-                        <li><i class="bi bi-check-circle-fill"></i> <div><strong>Cero Papel:</strong> Ahorros significativos mediante uso extensivo de firma electrónica y archivos digitales.</div></li>
-                        <li>
+                        <li><i class="bi bi-check-circle-fill"></i> <div><strong>Cero Papel:</strong> Ahorros significativos y sostenibilidad mediante uso extensivo de firma electrónica y archivos digitales.</div></li>
+                        <li><i class="bi bi-check-circle-fill"></i> <div><strong>Trazabilidad:</strong> Monitoreo exacto de dónde y con quién se encuentra cada documento dentro de la dependencia.</div></li>
+                        <li><i class="bi bi-check-circle-fill"></i> <div><strong>Eficiencia Operativa:</strong> Reducción de tiempos de respuesta hacia el ciudadano y auditoría de procesos.</div></li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="solucion-img">
+                        <img src="img/Control_gestion.png" alt="Sistema de Control de Gestión" onerror="this.style.display='none'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="carto" class="solucion-section">
+        <div class="container">
+            <div class="row align-items-center flex-lg-row-reverse">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="text-uppercase text-muted small fw-bold mb-2">Location Intelligence / Inteligencia Geoespacial</div>
+                    <h2 class="display-5 mb-4" style="color: var(--azul-oscuro);">CARTO</h2>
+                    <p class="lead">Visualización de datos territoriales y análisis avanzado para el empoderamiento de Ciudades Inteligentes.</p>
+                    <p>Como Partner Certificado de Carto Inc., implementamos plataformas que cruzan bases de datos complejas para identificar patrones. Es la herramienta líder mundial para proyectos de e-Seguridad (sensorización de flotas), e-Gobierno (cobro de impuestos prediales) e identificación de riesgos operativos.</p>
+                    
+                    <ul class="list-unstyled feature-list mt-4">
+                        <li><i class="bi bi-check-circle-fill"></i> <div><strong>Paneles en Tiempo Real:</strong> Desarrollo de dashboards con geo-alertas para reacciones operativas inmediatas de seguridad ciudadana.</div></li>
+                        <li><i class="bi bi-check-circle-fill"></i> <div><strong>Cruce de Algoritmos:</strong> Correlación de eventos territoriales para modelos predictivos y prevención de riesgos.</div></li>
+                        <li><i class="bi bi-check-circle-fill"></i> <div><strong>Gobernanza de Datos:</strong> Capacidad técnica para albergar, interpretar y compartir cientos de capas de datos institucionales de manera segura.</div></li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="solucion-img">
+                        <img src="img/carto.png" alt="Carto Inc. Inteligencia Geoespacial" style="mix-blend-mode: multiply;" onerror="this.style.display='none'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light py-5 text-center">
+        <div class="container">
+            <h3 class="mb-4" style="color: var(--azul-oscuro);">¿Buscas modernizar tu administración con soluciones de TI robustas?</h3>
+            <a href="contacto.html" class="btn btn-lg px-5 rounded-pill mt-2" style="background-color: var(--azul-argento); color: white;">Agenda una demostración hoy</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center">
+            <p class="small mb-0">© 2026 Argento Technology Innovation. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

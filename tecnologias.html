@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Argento | Ecosistema Tecnológico</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+    <style>
+        :root {
+            --azul-argento: #5d8896;
+            --azul-oscuro: #2c3e50;
+        }
+        body { font-family: 'Roboto', sans-serif; color: var(--azul-oscuro); background-color: #f8f9fa; }
+        h1, h2, h3, h5, .nav-link, .btn { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+
+        /* Navegación */
+        .navbar { background-color: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .nav-link.menu-link { color: var(--azul-argento) !important; text-transform: uppercase; font-size: 0.85rem; font-weight: bold; letter-spacing: 1px; }
+        .nav-link.menu-link:hover { color: var(--azul-oscuro) !important; }
+
+        /* Cabecera Interna */
+        .page-header { background: linear-gradient(45deg, var(--azul-oscuro), var(--azul-argento)); color: white; padding: 100px 0 50px; text-align: center; }
+        
+        /* Títulos de Sección */
+        .section-title { position: relative; display: inline-block; margin-bottom: 40px; color: var(--azul-oscuro); }
+        .section-title::after { content: ''; width: 50px; height: 3px; background-color: var(--azul-argento); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+
+        /* Tarjetas de Tecnología */
+        .tech-card { 
+            background: #fff; border-radius: 12px; padding: 25px 15px; text-align: center; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.03); border: 1px solid #f0f0f0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+        }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); border-color: var(--azul-argento); }
+        
+        .tech-icon-img { width: 100px; height: 100px; object-fit: contain; margin-bottom: 20px; }
+        .tech-icon-fallback { font-size: 5rem; color: #a0b2b8; margin-bottom: 15px; line-height: 1; }
+        
+        .tech-name { font-weight: 700; font-size: 1.1rem; color: var(--azul-oscuro); margin-bottom: 0; }
+        .tech-category { font-size: 0.85rem; color: #6c757d; margin-top: 5px; }
+
+        /* Footer */
+        footer { background-color: var(--azul-argento); color: white; padding: 60px 0; margin-top: 80px; }
+        footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo-argento.png" alt="Argento" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link menu-link" href="index.html">Inicio</a></li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link menu-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Nosotros</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="nosotros.html">Quiénes Somos</a></li>
+                            <li><a class="dropdown-item" href="clientes.html">Nuestros Clientes</a></li>
+                            <li><a class="dropdown-item" href="partners.html">Partners y Alianzas</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link menu-link" href="servicios.html">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link menu-link" href="tecnologias.html">Tecnologías</a></li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link menu-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Soluciones</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="soluciones.html#cms">CMS Central</a></li>
+                            <li><a class="dropdown-item" href="soluciones.html#sai">SAI Inmobiliaria</a></li>
+                            <li><a class="dropdown-item" href="soluciones.html#scg">SCG Gestión</a></li>
+                            <li><a class="dropdown-item" href="soluciones.html#carto">CARTO</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item"><a class="nav-link menu-link" href="proyectos.html">Proyectos</a></li>
+                    <li class="nav-item ms-2"><a class="btn btn-dark rounded-pill px-4" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container mt-4">
+            <h1 class="display-4 text-uppercase">Nuestras Tecnologías</h1>
+            <p class="lead">Conoce las herramientas, lenguajes y plataformas con las que construimos el futuro.</p>
+        </div>
+    </header>
+
+    <section class="container py-5 mt-4 text-center">
+        <h2 class="section-title">Nuestro Stack Tecnológico</h2>
+        <p class="mb-5 text-muted">Dominamos los lenguajes de programación y motores de bases de datos más robustos para construir tus ideas desde cero.</p>
+        
+        <div class="row g-4 justify-content-center">
+            <div class="col-6 col-md-4 col-lg-3"><div class="tech-card"><img src="6. Servicios web/java.png" class="tech-icon-img" alt="Java"><h5 class="tech-name">Java</h5><span class="tech-category">Desarrollo</span></div></div>
+            <div class="col-6 col-md-4 col-lg-3"><div class="tech-card"><img src="6. Servicios web/net.png" class="tech-icon-img" alt=".NET"><h5 class="tech-name">.NET</h5><span class="tech-category">Desarrollo</span></div></div>
+            <div class="col-6 col-md-4 col-lg-3"><div class="tech-card"><img src="6. Servicios web/php.png" class="tech-icon-img" alt="PHP"><h5 class="tech-name">PHP</h5><span class="tech-category">Desarrollo</span></div></div>
+            <div class="col-6 col-md-4 col-lg-3"><div class="tech-card"><img src="2. Web_apps/ios.png" class="tech-icon-img" alt="iOS"><h5 class="tech-name">iOS (Swift)</h5><span class="tech-category">Apps Móviles</span></div></div>
+            
+            <div class="col-6 col-md-4 col-lg-3"><div class="tech-card"><img src="4.Base_datos/postgresql.png" class="tech-icon-img" alt="PostgreSQL"><h5 class="tech-name">PostgreSQL</h5><span class="tech-category">Base de Datos</span></div></div>
+            <div class="col-6 col-md-4 col-lg-3"><div class="tech-card"><img src="4.Base_datos/mongodb.png" class="tech-icon-img" alt="MongoDB"><h5 class="tech-name">MongoDB</h5><span class="tech-category">Base de Datos</span></div></div>
+            <div class="col-6 col-md-4 col-lg-3"><div class="tech-card"><img src="4.Base_datos/mariadb.png" class="tech-icon-img" alt="MariaDB"><h5 class="tech-name">MariaDB</h5><span class="tech-category">Base de Datos</span></div></div>
+            <div class="col-6 col-md-4 col-lg-3"><div class="tech-card"><img src="4.Base_datos/dbase.png" class="tech-icon-img" alt="Dbase"><h5 class="tech-name">Dbase</h5><span class="tech-category">Sistemas Legados</span></div></div>
+            <div class="col-6 col-md-4 col-lg-3"><div class="tech-card"><img src="3. Desarrollo/foxpro y visual poxpro.png" class="tech-icon-img" alt="FoxPro"><h5 class="tech-name">FoxPro</h5><span class="tech-category">Sistemas Legados</span></div></div>
+            
+            <div class="col-6 col-md-4 col-lg-3"><div class="tech-card"><i class="bi bi-filetype-py tech-icon-fallback"></i><h5 class="tech-name">Python</h5><span class="tech-category">Desarrollo</span></div></div>
+            <div class="col-6 col-md-4 col-lg-3"><div class="tech-card"><i class="bi bi-android2 tech-icon-fallback"></i><h5 class="tech-name">Android (Java)</h5><span class="tech-category">Apps Móviles</span></div></div>
+            <div class="col-6 col-md-4 col-lg-3"><div class="tech-card"><i class="bi bi-database tech-icon-fallback"></i><h5 class="tech-name">Oracle / SQL Server</h5><span class="tech-category">Base de Datos</span></div></div>
+            <div class="col-6 col-md-4 col-lg-3"><div class="tech-card"><i class="bi bi-hdd-rack tech-icon-fallback"></i><h5 class="tech-name">Linux / Unix</h5><span class="tech-category">Sistemas Operativos</span></div></div>
+            <div class="col-6 col-md-4 col-lg-3"><div class="tech-card"><i class="bi bi-terminal tech-icon-fallback"></i><h5 class="tech-name">Clipper / Cobol</h5><span class="tech-category">Sistemas Legados</span></div></div>
+        </div>
+    </section>
+
+    <section class="bg-light py-5 text-center">
+        <div class="container">
+            <h2 class="section-title">Herramientas y Plataformas</h2>
+            <p class="mb-5 text-muted">Utilizamos el software líder en la industria para potenciar tu análisis, diseño y gestión.</p>
+            
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-4 col-lg-3"><div class="tech-card"><img src="2. Web_apps/sistemas de gestión de contenidos personalizados.png" class="tech-icon-img" alt="CMS"><h5 class="tech-name">CMS</h5><span class="tech-category">Gestión de Contenido</span></div></div>
+                <div class="col-6 col-md-4 col-lg-3"><div class="tech-card"><img src="3. Desarrollo/adobe.png" class="tech-icon-img" alt="Adobe"><h5 class="tech-name">Adobe</h5><span class="tech-category">Diseño y Desarrollo</span></div></div>
+                <div class="col-6 col-md-4 col-lg-3"><div class="tech-card"><img src="3. Desarrollo/crystal reports.png" class="tech-icon-img" alt="Crystal Reports"><h5 class="tech-name">Crystal Reports</h5><span class="tech-category">Reportería</span></div></div>
+                <div class="col-6 col-md-4 col-lg-3"><div class="tech-card"><img src="1. Servicios_innovación/soluciones software libre.png" class="tech-icon-img" alt="Software Libre"><h5 class="tech-name">Software Libre</h5><span class="tech-category">Innovación</span></div></div>
+                
+                <div class="col-6 col-md-4 col-lg-3"><div class="tech-card"><i class="bi bi-bar-chart-fill tech-icon-fallback"></i><h5 class="tech-name">Tableau / PowerBI</h5><span class="tech-category">Inteligencia de Negocios</span></div></div>
+                <div class="col-6 col-md-4 col-lg-3"><div class="tech-card"><i class="bi bi-layers tech-icon-fallback"></i><h5 class="tech-name">VMWare / XEN</h5><span class="tech-category">Virtualización</span></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5 text-center">
+        <h2 class="section-title">Ecosistema y Nube</h2>
+        <p class="mb-5 text-muted">Llevamos tu empresa al siguiente nivel con arquitecturas escalables, integraciones web y grandes sistemas empresariales.</p>
+        
+        <div class="row g-4 justify-content-center">
+            <div class="col-6 col-md-4 col-lg-3"><div class="tech-card"><img src="6. Servicios web/soap.png" class="tech-icon-img" alt="SOAP"><h5 class="tech-name">SOAP</h5><span class="tech-category">Integraciones</span></div></div>
+            <div class="col-6 col-md-4 col-lg-3"><div class="tech-card"><img src="6. Servicios web/rest.png" class="tech-icon-img" alt="REST"><h5 class="tech-name">REST / APIs</h5><span class="tech-category">Integraciones</span></div></div>
+            <div class="col-6 col-md-4 col-lg-3"><div class="tech-card"><img src="3. Desarrollo/flex_abap.png" class="tech-icon-img" alt="SAP"><h5 class="tech-name">SAP Flex/ABAP</h5><span class="tech-category">Sistemas Empresariales</span></div></div>
+            
+            <div class="col-6 col-md-4 col-lg-3"><div class="tech-card"><img src="1. Servicios_innovación/soluciones big data.png" class="tech-icon-img" alt="Big Data"><h5 class="tech-name">Big Data</h5><span class="tech-category">Arquitectura de Datos</span></div></div>
+            <div class="col-6 col-md-4 col-lg-3"><div class="tech-card"><img src="1. Servicios_innovación/gobierno de datos.png" class="tech-icon-img" alt="Gobierno de Datos"><h5 class="tech-name">Gobierno de Datos</h5><span class="tech-category">Arquitectura de Datos</span></div></div>
+            <div class="col-6 col-md-4 col-lg-3"><div class="tech-card"><img src="1. Servicios_innovación/minería de datos.png" class="tech-icon-img" alt="Minería de Datos"><h5 class="tech-name">Minería de Datos</h5><span class="tech-category">Arquitectura de Datos</span></div></div>
+            <div class="col-6 col-md-4 col-lg-3"><div class="tech-card"><img src="1. Servicios_innovación/arquitectura de datos.png" class="tech-icon-img" alt="Arquitectura"><h5 class="tech-name">Arquit. de Datos</h5><span class="tech-category">Arquitectura de Datos</span></div></div>
+            
+            <div class="col-6 col-md-4 col-lg-3"><div class="tech-card"><i class="bi bi-cloud-arrow-up tech-icon-fallback"></i><h5 class="tech-name">AWS / Azure / GCP</h5><span class="tech-category">Nube</span></div></div>
+            <div class="col-6 col-md-4 col-lg-3"><div class="tech-card"><i class="bi bi-building-gear tech-icon-fallback"></i><h5 class="tech-name">Oracle EBS</h5><span class="tech-category">Sistemas Empresariales</span></div></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center">
+            <p class="small mb-0">© 2026 Argento Technology Innovation. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

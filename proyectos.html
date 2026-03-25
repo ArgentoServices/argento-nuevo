@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Argento | Proyectos y Casos de Éxito</title>
-    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="icon" href="img/favicon.png" type="image/png">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -18,39 +18,33 @@
         body { font-family: 'Roboto', sans-serif; color: var(--azul-oscuro); background-color: #f8f9fa; }
         h1, h2, h3, h5, .nav-link, .btn { font-family: 'Montserrat', sans-serif; font-weight: 700; }
 
-        /* Navegación */
         .navbar { background-color: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
         .nav-link.menu-link { color: var(--azul-argento) !important; text-transform: uppercase; font-size: 0.85rem; font-weight: bold; letter-spacing: 1px; }
         .nav-link.menu-link:hover { color: var(--azul-oscuro) !important; }
 
-        /* Cabecera Interna */
         .page-header { background: linear-gradient(45deg, var(--azul-oscuro), var(--azul-argento)); color: white; padding: 100px 0 50px; text-align: center; }
         
-        /* Tarjetas de Proyecto */
         .project-card { border: none; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: transform 0.3s ease; height: 100%; display: flex; flex-direction: column; }
         .project-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
-        .project-img { height: 220px; background-color: #e9ecef; object-fit: cover; width: 100%; display: flex; align-items: center; justify-content: center; color: #adb5bd; font-size: 3rem;}
+        .project-img { height: 220px; background-color: #e9ecef; object-fit: contain; width: 100%; display: flex; align-items: center; justify-content: center; color: #adb5bd; font-size: 3rem; padding: 20px; }
         .project-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
         
-        /* Etiquetas de Tecnología (Lo que platicamos) */
         .tech-tags { margin-top: auto; margin-bottom: 15px; }
         .badge-tech { background-color: #e2e8f0; color: #475569; font-weight: 500; font-size: 0.75rem; padding: 5px 10px; margin: 2px 2px 0 0; border-radius: 4px; display: inline-block; }
 
-        /* Botón Caso de Éxito */
         .btn-story { background-color: transparent; color: var(--azul-argento); border: 2px solid var(--azul-argento); border-radius: 50px; font-size: 0.9rem; padding: 8px 20px; transition: all 0.3s; align-self: flex-start; }
         .btn-story:hover { background-color: var(--azul-argento); color: white; }
 
-        /* Footer */
         footer { background-color: var(--azul-argento); color: white; padding: 60px 0; margin-top: 80px; }
         footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg fixed-top">
+<nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="logo-argento.png" alt="Argento" height="50">
+                <img src="img/logo-argento.png" alt="Argento" height="50">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -58,8 +52,19 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav align-items-center">
                     <li class="nav-item"><a class="nav-link menu-link" href="index.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link menu-link" href="nosotros.html">Nosotros</a></li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link menu-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Nosotros</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="nosotros.html">Quiénes Somos</a></li>
+                            <li><a class="dropdown-item" href="clientes.html">Nuestros Clientes</a></li>
+                            <li><a class="dropdown-item" href="partners.html">Partners y Alianzas</a></li>
+                        </ul>
+                    </li>
+
                     <li class="nav-item"><a class="nav-link menu-link" href="servicios.html">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link menu-link" href="tecnologias.html">Tecnologías</a></li>
+                    
                     <li class="nav-item dropdown">
                         <a class="nav-link menu-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Soluciones</a>
                         <ul class="dropdown-menu">
@@ -69,6 +74,7 @@
                             <li><a class="dropdown-item" href="soluciones.html#carto">CARTO</a></li>
                         </ul>
                     </li>
+                    
                     <li class="nav-item"><a class="nav-link menu-link active" href="proyectos.html">Proyectos</a></li>
                     <li class="nav-item ms-2"><a class="btn btn-dark rounded-pill px-4" href="contacto.html">Contacto</a></li>
                 </ul>
@@ -78,28 +84,29 @@
 
     <header class="page-header">
         <div class="container mt-4">
-            <h1 class="display-4 text-uppercase">Casos de Éxito</h1>
-            <p class="lead">Conoce cómo hemos transformado operaciones en el sector público y privado.</p>
+            <h1 class="display-4 text-uppercase">Casos de Éxito [cite: 104]</h1>
+            <p class="lead">Resultados probados en e-Finanzas, e-Seguridad y e-Gobierno[cite: 25].</p>
         </div>
     </header>
 
     <section class="container py-5">
-        <div class="row g-4">
+        <div class="row g-4 justify-content-center">
 
             <div class="col-md-6 col-lg-4">
                 <div class="card project-card">
-                    <div class="project-img"><i class="bi bi-building"></i></div>
-                    
+                    <div class="project-img">
+                        <img src="img/cdmx.png" alt="Gobierno de la CDMX" style="max-height: 150px;">
+                    </div>
                     <div class="project-body">
-                        <p class="text-muted small text-uppercase mb-1"><i class="bi bi-tag-fill text-secondary"></i> Sector Público</p>
-                        <h4 class="card-title mb-2">Recaudación Predial</h4>
-                        <p class="small fw-bold text-secondary mb-3">Cliente: Gobierno de la CDMX (Sec. Finanzas)</p>
-                        <p class="card-text small mb-4">Fortalecimiento de las finanzas públicas mediante la automatización y digitalización del sistema de recaudación.</p>
+                        <p class="text-muted small text-uppercase mb-1"><i class="bi bi-tag-fill text-secondary"></i> e-Gobierno</p>
+                        <h4 class="card-title mb-2">SAP GRP Planeación [cite: 244]</h4>
+                        <p class="small fw-bold text-secondary mb-3">Cliente: Gobierno de la CDMX</p>
+                        <p class="card-text small mb-4">Mesa de soporte técnico y blindaje normativo GRP-SAP para más de 100 unidades ejecutoras del gasto público[cite: 225, 249].</p>
                         
                         <div class="tech-tags">
-                            <span class="badge-tech">Gestión Inmobiliaria</span>
-                            <span class="badge-tech">Apps Móviles</span>
-                            <span class="badge-tech">Biometría</span>
+                            <span class="badge-tech">SAP</span>
+                            <span class="badge-tech">LGCG</span>
+                            <span class="badge-tech">Datos Abiertos OCDS</span>
                         </div>
                         
                         <button class="btn btn-story mt-3" data-bs-toggle="modal" data-bs-target="#modalProyecto1">
@@ -111,17 +118,19 @@
 
             <div class="col-md-6 col-lg-4">
                 <div class="card project-card">
-                    <div class="project-img"><i class="bi bi-graph-up-arrow"></i></div>
+                    <div class="project-img">
+                        <img src="img/alcaldía benito juárez.png" alt="Alcaldía Benito Juárez" style="max-height: 150px;">
+                    </div>
                     <div class="project-body">
-                        <p class="text-muted small text-uppercase mb-1"><i class="bi bi-tag-fill text-secondary"></i> Sector Público</p>
-                        <h4 class="card-title mb-2">SAP GRP Planeación</h4>
-                        <p class="small fw-bold text-secondary mb-3">Cliente: Gobierno de la CDMX</p>
-                        <p class="card-text small mb-4">Mesa de soporte técnico GRP-SAP para más de 100 unidades ejecutoras del gasto público.</p>
+                        <p class="text-muted small text-uppercase mb-1"><i class="bi bi-tag-fill text-secondary"></i> e-Seguridad</p>
+                        <h4 class="card-title mb-2">Sensorización de Flotas</h4>
+                        <p class="small fw-bold text-secondary mb-3">Cliente: Alcaldía Benito Juárez</p>
+                        <p class="card-text small mb-4">Visualización y control territorial en tiempo real para eficiencia presupuestaria y prevención de riesgos[cite: 107, 143].</p>
                         
                         <div class="tech-tags">
-                            <span class="badge-tech"><img src="sap.png" alt="SAP" width="12" style="display:none;"> SAP</span>
-                            <span class="badge-tech">LGCG</span>
-                            <span class="badge-tech">OCDS</span>
+                            <span class="badge-tech">Telemetría IoT</span>
+                            <span class="badge-tech">Location Intelligence</span>
+                            <span class="badge-tech">Carto</span>
                         </div>
                         
                         <button class="btn btn-story mt-3" data-bs-toggle="modal" data-bs-target="#modalProyecto2">
@@ -133,42 +142,22 @@
 
             <div class="col-md-6 col-lg-4">
                 <div class="card project-card">
-                    <div class="project-img"><i class="bi bi-server"></i></div>
+                    <div class="project-img">
+                        <img src="img/imss.png" alt="IMSS" style="max-height: 150px;">
+                    </div>
                     <div class="project-body">
-                        <p class="text-muted small text-uppercase mb-1"><i class="bi bi-tag-fill text-secondary"></i> Sector Privado</p>
-                        <h4 class="card-title mb-2">Instalación SAP ECC</h4>
-                        <p class="small fw-bold text-secondary mb-3">Cliente: Grupo Modelo / AVNET</p>
-                        <p class="card-text small mb-4">Administración, implementación y configuración High Availability de entorno SAP corporativo.</p>
+                        <p class="text-muted small text-uppercase mb-1"><i class="bi bi-tag-fill text-secondary"></i> e-Salud</p>
+                        <h4 class="card-title mb-2">Estrategia IMSS Digital [cite: 318]</h4>
+                        <p class="small fw-bold text-secondary mb-3">Cliente: IMSS Nivel Federal</p>
+                        <p class="card-text small mb-4">Arquitectura de alcance federal y nube privada para modernizar el modelo de atención a la ciudadanía[cite: 313, 317].</p>
                         
                         <div class="tech-tags">
-                            <span class="badge-tech">SAP ECC 6.0</span>
-                            <span class="badge-tech">SAP Netweaver</span>
-                            <span class="badge-tech">High Availability</span>
+                            <span class="badge-tech">Arquitectura Empresarial</span>
+                            <span class="badge-tech">Nube Privada</span>
+                            <span class="badge-tech">App Móvil</span>
                         </div>
                         
                         <button class="btn btn-story mt-3" data-bs-toggle="modal" data-bs-target="#modalProyecto3">
-                            Leer historia <i class="bi bi-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="card project-card">
-                    <div class="project-img"><i class="bi bi-database"></i></div>
-                    <div class="project-body">
-                        <p class="text-muted small text-uppercase mb-1"><i class="bi bi-tag-fill text-secondary"></i> Sector Privado</p>
-                        <h4 class="card-title mb-2">Instalación SAP BW & BO</h4>
-                        <p class="small fw-bold text-secondary mb-3">Cliente: Telcel / AVNET</p>
-                        <p class="card-text small mb-4">Implementación de bases de datos DB2, HP-UX y ecosistema analítico SAP Business Objects.</p>
-                        
-                        <div class="tech-tags">
-                            <span class="badge-tech">DB2 Database</span>
-                            <span class="badge-tech">HP-UX</span>
-                            <span class="badge-tech">SAP BW 7.0</span>
-                        </div>
-                        
-                        <button class="btn btn-story mt-3" data-bs-toggle="modal" data-bs-target="#modalProyecto4">
                             Leer historia <i class="bi bi-arrow-right"></i>
                         </button>
                     </div>
@@ -182,22 +171,21 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header bg-light">
-                    <h5 class="modal-title text-primary">Recaudación Predial - CDMX</h5>
+                    <h5 class="modal-title" style="color: var(--azul-oscuro);">SAP GRP Planeación - CDMX</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-4">
                     <h6 class="text-uppercase text-secondary fw-bold mb-2">El Reto</h6>
-                    <p>Aumentar la recaudación en la CDMX en el periodo 2009 - 2017 otorgando al ciudadano servicios las 24 horas del día.</p>
+                    <p>Gestión de escala y soporte técnico a más de 100 Unidades Ejecutoras del Gasto[cite: 225]. Garantizar la operación financiera y normativa bajo la Ley General de Contabilidad Gubernamental (LGCG) y cumplir con la exigencia de transparencia en formato abierto para combatir la corrupción[cite: 227, 229].</p>
                     
                     <h6 class="text-uppercase text-secondary fw-bold mb-2 mt-4">La Solución</h6>
-                    <p>Crear, actualizar, digitalizar e integrar los sistemas de recaudación, cartografía y bases de datos, incorporando un mayor control administrativo y territorial.</p>
+                    <p>Incorporación de consultores certificados en SAP para blindar el sistema GRP[cite: 223]. Se aseguró que la operación generara automáticamente los momentos contables exigidos por la LGCG en una base de datos única, publicando en tiempo real en formato JSON asegurando Transparencia Proactiva[cite: 249, 262].</p>
 
-                    <h6 class="text-uppercase text-success fw-bold mb-2 mt-4"><i class="bi bi-check-circle-fill"></i> Beneficios Obtenidos</h6>
+                    <h6 class="text-uppercase fw-bold mb-2 mt-4" style="color: var(--azul-argento);"><i class="bi bi-check-circle-fill"></i> Impacto Directo</h6>
                     <ul class="mb-0">
-                        <li>Automatización de los procesos de predial.</li>
-                        <li>Servicios en línea de cobro de impuestos y App de recaudación.</li>
-                        <li>Beneficios de Biometría de voz a adultos mayores.</li>
-                        <li>Mayor cobertura de pago con terceros.</li>
+                        <li><strong>Ahorro Multianual:</strong> Reducción efectiva del gasto del 24% comparado con las cotizaciones de otros concursantes[cite: 270].</li>
+                        <li><strong>Cero Observaciones:</strong> Cuentas públicas impecables y transparentes ante entes fiscalizadores[cite: 273].</li>
+                        <li><strong>Premio Transparencia:</strong> Reconocimiento por la implementación del Estándar de Datos de Contrataciones Abiertas (OCDS)[cite: 276].</li>
                     </ul>
                 </div>
             </div>
@@ -208,8 +196,58 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header bg-light">
-                    <h5 class="modal-title text-primary">SAP GRP Planeación - CDMX</h5>
+                    <h5 class="modal-title" style="color: var(--azul-oscuro);">Eficiencia Presupuestaria y Seguridad - Benito Juárez</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-4">
-                    <h6 class="text-uppercase text
+                    <h6 class="text-uppercase text-secondary fw-bold mb-2">El Reto</h6>
+                    <p>Falta de visibilidad e incapacidad de conocer el consumo real de gasolina de las unidades en tiempo real[cite: 130]. Necesidad de gestionar una flota masiva de 1,800 patrullas, combatiendo la existencia de "ordeña" (extracción ilegal de combustible) estimada en un 30% del consumo total[cite: 132, 133].</p>
+                    
+                    <h6 class="text-uppercase text-secondary fw-bold mb-2 mt-4">La Solución</h6>
+                    <p>Instalación de hardware de precisión (sensores) en tanques y motores, con configuración de telemetría en tiempo real y transmisión de datos con delay de solo 45 segundos[cite: 135, 136]. Desarrollo de plataforma de Inteligencia Geoespacial sobre Carto para visualización de paneles[cite: 137, 141].</p>
+
+                    <h6 class="text-uppercase fw-bold mb-2 mt-4" style="color: var(--azul-argento);"><i class="bi bi-check-circle-fill"></i> Impacto Directo</h6>
+                    <ul class="mb-0">
+                        <li>Sostenibilidad del ahorro de $82.9M estableciendo un nuevo estándar operativo[cite: 164].</li>
+                        <li>100% de visibilidad de flota e integridad operativa en combustible (cero impunidad)[cite: 151, 152, 156].</li>
+                        <li>Optimización del patrullaje cruzando datos de GPS vs. Incidencia Delictiva[cite: 166].</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalProyecto3" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-light">
+                    <h5 class="modal-title" style="color: var(--azul-oscuro);">Estrategia IMSS Digital - Nivel Federal</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <h6 class="text-uppercase text-secondary fw-bold mb-2">El Reto</h6>
+                    <p>Crear una estrategia tecnológica capaz de cubrir y soportar la altísima demanda de servicios, modernizando el modelo de atención de la Institución a la ciudadanía en todo el país[cite: 316, 317].</p>
+                    
+                    <h6 class="text-uppercase text-secondary fw-bold mb-2 mt-4">La Solución</h6>
+                    <p>Implementación de la Estrategia IMSS Digital adoptando mejores prácticas en Arquitectura Empresarial[cite: 318, 319]. Se estructuró un modelo unificado de operación y un modelo moderno multicanal (Web, App, Kioskos) soportado por una Nube Privada Institucional de alta disponibilidad[cite: 328, 335, 340].</p>
+
+                    <h6 class="text-uppercase fw-bold mb-2 mt-4" style="color: var(--azul-argento);"><i class="bi bi-check-circle-fill"></i> Impacto Directo</h6>
+                    <ul class="mb-0">
+                        <li>Publicación exitosa de trámites 100% digitales[cite: 321].</li>
+                        <li><strong>Ahorro Ciudadano:</strong> Eliminación de gastos de transporte, copias y tiempos de traslado al realizar trámites en línea[cite: 322].</li>
+                        <li><strong>Ahorro Institucional:</strong> Reutilización y alineación de componentes clave para evitar duplicidad de gastos operativos[cite: 324].</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container text-center">
+            <p class="small mb-0">© 2026 Argento Technology Innovation. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

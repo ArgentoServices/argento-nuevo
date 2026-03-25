@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Argento | Nosotros</title>
-    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="icon" href="img/favicon.png" type="image/png">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -18,36 +18,31 @@
         body { font-family: 'Roboto', sans-serif; color: var(--azul-oscuro); background-color: #f8f9fa; }
         h1, h2, h3, h4, h5, .nav-link, .btn { font-family: 'Montserrat', sans-serif; font-weight: 700; }
 
-        /* Navegación */
         .navbar { background-color: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
         .nav-link.menu-link { color: var(--azul-argento) !important; text-transform: uppercase; font-size: 0.85rem; font-weight: bold; letter-spacing: 1px; }
         .nav-link.menu-link:hover { color: var(--azul-oscuro) !important; }
 
-        /* Cabecera Interna */
         .page-header { background: linear-gradient(45deg, var(--azul-oscuro), var(--azul-argento)); color: white; padding: 100px 0 50px; text-align: center; }
         
-        /* Cajas de Misión / Visión */
         .mv-card { border: none; border-radius: 10px; background-color: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; padding: 40px 30px; height: 100%; transition: transform 0.3s; }
         .mv-card:hover { transform: translateY(-5px); }
         .mv-icon { font-size: 3rem; color: var(--azul-argento); margin-bottom: 20px; }
 
-        /* Lista de Valores (Grid) */
         .valor-item { display: flex; align-items: flex-start; margin-bottom: 30px; }
         .valor-icon { font-size: 2rem; color: var(--azul-argento); margin-right: 20px; line-height: 1; }
         .valor-text h5 { color: var(--azul-oscuro); margin-bottom: 5px; }
         .valor-text p { color: #6c757d; font-size: 0.95rem; }
 
-        /* Footer */
         footer { background-color: var(--azul-argento); color: white; padding: 60px 0; margin-top: 80px; }
         footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg fixed-top">
+<nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="logo-argento.png" alt="Argento" height="50">
+                <img src="img/logo-argento.png" alt="Argento" height="50">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -55,8 +50,19 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav align-items-center">
                     <li class="nav-item"><a class="nav-link menu-link" href="index.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link menu-link active" href="nosotros.html">Nosotros</a></li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link menu-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Nosotros</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item active" href="nosotros.html">Quiénes Somos</a></li>
+                            <li><a class="dropdown-item" href="clientes.html">Nuestros Clientes</a></li>
+                            <li><a class="dropdown-item" href="partners.html">Partners y Alianzas</a></li>
+                        </ul>
+                    </li>
+
                     <li class="nav-item"><a class="nav-link menu-link" href="servicios.html">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link menu-link" href="tecnologias.html">Tecnologías</a></li>
+                    
                     <li class="nav-item dropdown">
                         <a class="nav-link menu-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Soluciones</a>
                         <ul class="dropdown-menu">
@@ -66,6 +72,7 @@
                             <li><a class="dropdown-item" href="soluciones.html#carto">CARTO</a></li>
                         </ul>
                     </li>
+                    
                     <li class="nav-item"><a class="nav-link menu-link" href="proyectos.html">Proyectos</a></li>
                     <li class="nav-item ms-2"><a class="btn btn-dark rounded-pill px-4" href="contacto.html">Contacto</a></li>
                 </ul>
@@ -76,7 +83,7 @@
     <header class="page-header">
         <div class="container mt-4">
             <h1 class="display-4 text-uppercase">Sobre Nosotros</h1>
-            <p class="lead">Soluciones de TI a la medida que resuelven las necesidades de su negocio.</p>
+            <p class="lead" style="font-style: italic;">"No es hacer tecnología por hacerla; es tecnología para que el ciudadano viva mejor." [cite: 33]</p>
         </div>
     </header>
 
@@ -84,9 +91,9 @@
         <div class="row align-items-center">
             <div class="col-lg-6 mb-4 mb-lg-0">
                 <h2 class="mb-4 text-uppercase" style="color: var(--azul-argento);">Quiénes Somos</h2>
-                <p class="lead" style="font-weight: 400;">Somos una empresa mexicana que cuenta con especialistas interdisciplinarios con <strong>más de 20 años de experiencia</strong> en habilitar soluciones de Tecnología de Información y Comunicaciones en sector público y privado.</p>
-                <p>En Argento reconocemos los cambios constantes del mercado de innovación y tecnología, por lo anterior hemos logrado alianzas con diferentes asociados de negocio, buscando siempre brindar las mejores soluciones a nuestros clientes.</p>
-                <p>Nos adaptamos a los cambios generando sinergia de crecimiento e innovación. Somos una organización flexible, práctica y ordenada; un legado de excelentes profesionistas, responsables y éticos comprometidos con el servicio.</p>
+                <p class="lead" style="font-weight: 400;">Somos una empresa mexicana que cuenta con especialistas interdisciplinarios con <strong>más de 20 años de experiencia</strong> en habilitar soluciones de Tecnología de Información y Comunicaciones en sector público y privado[cite: 30].</p>
+                <p>En Argento reconocemos los cambios constantes del mercado de innovación y tecnología, por lo anterior hemos logrado alianzas con diferentes asociados de negocio, buscando siempre brindar las mejores soluciones a nuestros clientes[cite: 27].</p>
+                <p>Nos adaptamos a los cambios generando sinergia de crecimiento e innovación. Somos una organización flexible, práctica y ordenada; un legado de excelentes profesionistas, responsables y éticos comprometidos con el servicio[cite: 35, 38, 40].</p>
             </div>
             <div class="col-lg-6">
                 <div style="background-color: #e9ecef; border-radius: 15px; height: 350px; display: flex; align-items: center; justify-content: center; color: #adb5bd;">
@@ -118,7 +125,7 @@
                     <div class="mv-card">
                         <i class="bi bi-globe-americas mv-icon"></i>
                         <h4>Nuestro Objetivo</h4>
-                        <p class="text-muted mt-3">Transformar al mundo reduciendo la brecha digital, creando innovación en Ciudades Inteligentes usando las TIC para mejorar la eficacia en los servicios públicos y privados.</p>
+                        <p class="text-muted mt-3">Transformar al mundo reduciendo la brecha digital, creando innovación en Ciudades Inteligentes usando las TIC para mejorar la eficacia en los servicios públicos y privados[cite: 51, 56].</p>
                     </div>
                 </div>
             </div>
@@ -127,17 +134,61 @@
 
     <section class="container py-5 mt-4">
         <div class="text-center mb-5">
-            <h2 class="text-uppercase" style="color: var(--azul-argento);">Por qué elegir Argento</h2>
+            <h2 class="text-uppercase" style="color: var(--azul-argento);">Nuestro Liderazgo</h2>
+            <div style="width: 80px; height: 4px; background-color: var(--azul-oscuro); margin: 20px auto;"></div>
+            <p class="lead">El equipo de expertos detrás de la innovación tecnológica[cite: 10].</p>
+        </div>
+
+        <div class="row text-center g-4">
+            <div class="col-md-4">
+                <div class="p-4" style="background-color: #fff; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); height: 100%;">
+                    <i class="bi bi-person-circle" style="font-size: 3.5rem; color: var(--azul-argento);"></i>
+                    <h4 class="mt-3" style="color: var(--azul-oscuro);">Lorena Iglesias [cite: 72]</h4>
+                    <p class="text-muted fw-bold mb-1">Directora General [cite: 71]</p>
+                    <p class="small text-secondary">Liderazgo Institucional y Relaciones Gubernamentales [cite: 73]</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4" style="background-color: #fff; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); height: 100%;">
+                    <i class="bi bi-person-circle" style="font-size: 3.5rem; color: var(--azul-argento);"></i>
+                    <h4 class="mt-3" style="color: var(--azul-oscuro);">Carolina Iglesias [cite: 85]</h4>
+                    <p class="text-muted fw-bold mb-1">Directora de Operaciones [cite: 84]</p>
+                    <p class="small text-secondary">Estrategia de negocios y Marketing [cite: 86]</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4" style="background-color: #fff; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); height: 100%;">
+                    <i class="bi bi-person-circle" style="font-size: 3.5rem; color: var(--azul-argento);"></i>
+                    <h4 class="mt-3" style="color: var(--azul-oscuro);">Ulises López [cite: 76]</h4>
+                    <p class="text-muted fw-bold mb-1">Director de Innovación [cite: 74]</p>
+                    <p class="small text-secondary">Estrategia de Negocio y Modernización Pública [cite: 75]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5" style="border-top: 1px solid #dee2e6;">
+        <div class="text-center mb-5">
+            <h2 class="text-uppercase" style="color: var(--azul-argento);">Nuestra Filosofía [cite: 36]</h2>
             <div style="width: 80px; height: 4px; background-color: var(--azul-oscuro); margin: 20px auto;"></div>
         </div>
 
         <div class="row">
             <div class="col-md-6">
                 <div class="valor-item">
-                    <i class="bi bi-lightbulb valor-icon"></i>
+                    <i class="bi bi-arrow-repeat valor-icon"></i>
                     <div class="valor-text">
-                        <h5>Estrategias Innovadoras</h5>
-                        <p>Ofrecemos estrategias de TI con propuestas simples, innovadoras y flexibles para su negocio.</p>
+                        <h5>Adaptabilidad e Innovación</h5>
+                        <p>Nos adaptamos a los cambios, generando sinergia de crecimiento continuo en entornos urbanos y tecnológicos[cite: 35].</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="valor-item">
+                    <i class="bi bi-book valor-icon"></i>
+                    <div class="valor-text">
+                        <h5>Capacitación Constante</h5>
+                        <p>Nos mantenemos en constante capacitación y actualización para dominar las herramientas líderes del mercado[cite: 37].</p>
                     </div>
                 </div>
             </div>
@@ -145,26 +196,17 @@
                 <div class="valor-item">
                     <i class="bi bi-shield-check valor-icon"></i>
                     <div class="valor-text">
-                        <h5>Ciberseguridad</h5>
-                        <p>Brindamos soluciones de ciberseguridad para garantizar la protección total de su información.</p>
+                        <h5>Profesionalismo y Ética</h5>
+                        <p>Forjamos un legado de excelentes profesionistas, responsables y éticos, firmemente comprometidos con el servicio público y privado[cite: 38].</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="valor-item">
-                    <i class="bi bi-building-up valor-icon"></i>
+                    <i class="bi bi-emoji-smile valor-icon"></i>
                     <div class="valor-text">
-                        <h5>Empresas Inteligentes</h5>
-                        <p>Creamos empresas inteligentes implementando nuevas tecnologías e innovando en sus procesos diarios.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="valor-item">
-                    <i class="bi bi-people valor-icon"></i>
-                    <div class="valor-text">
-                        <h5>Expertos a tu alcance</h5>
-                        <p>Proveemos infraestructura y seleccionamos a los mejores expertos para tu área de TI.</p>
+                        <h5>Enfoque en el Cliente</h5>
+                        <p>Operamos con un enfoque absoluto en la satisfacción de nuestros clientes, garantizando implementaciones ágiles y ordenadas[cite: 39, 40].</p>
                     </div>
                 </div>
             </div>
