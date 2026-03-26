@@ -43,6 +43,9 @@
             transition: all 0.3s ease;
             position: relative;
             border: 1px solid #e9ecef;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .partner-card:hover {
             transform: translateY(-10px);
@@ -55,12 +58,23 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 25px;
+            width: 100%;
         }
         .partner-logo-container img {
             max-width: 80%;
             max-height: 100%;
             object-fit: contain;
         }
+
+        /* Ajuste específico para que el logo de CARTO no se vea tan pequeño */
+        .partner-card-carto .partner-logo-container {
+            height: 120px; /* Aumentamos la altura del contenedor solo para esta tarjeta */
+            margin-bottom: 20px; /* Reducimos el margen un poco para compensar */
+        }
+        .partner-card-carto .partner-logo-container img {
+            max-width: 90%; /* Aumentamos el ancho máximo un poco también */
+        }
+
         .certification-badge {
             display: inline-block;
             background-color: var(--azul-oscuro);
@@ -77,6 +91,7 @@
             font-size: 0.9rem;
             color: #6c757d;
             margin-bottom: 0;
+            flex-grow: 1;
         }
 
         .certification-section {
@@ -144,9 +159,9 @@
             <div class="row g-4 justify-content-center">
                 
                 <div class="col-md-6 col-lg-4">
-                    <div class="partner-card">
+                    <div class="partner-card partner-card-carto">
                         <div class="partner-logo-container">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Carto_logo.svg/640px-Carto_logo.svg.png" alt="CARTO">
+                            <img src="img/logo-carto.png" alt="CARTO" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/e/e8/Carto_logo.svg'">
                         </div>
                         <span class="certification-badge">Certified Partner</span>
                         <p class="partner-desc">Socio estratégico para el despliegue de plataformas de Location Intelligence y análisis geoespacial para Smart Cities.</p>
@@ -193,17 +208,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-4">
-                    <div class="partner-card">
-                        <div class="partner-logo-container">
-                            <img src="img/logo-argento.png" alt="Argento Technology">
-                        </div>
-                        <span class="certification-badge" style="background-color: var(--azul-argento);">Tecnología Propietaria</span>
-                        <p class="partner-desc">Desarrollo in-house de plataformas de misión crítica, como AlphaManaged CMS, garantizando independencia y soberanía digital.</p>
-                    </div>
                 </div>
-
-            </div>
         </div>
     </section>
 
