@@ -30,21 +30,55 @@
         .quote-section { background-color: var(--azul-argento); color: white; padding: 80px 0; position: relative; overflow: hidden; }
         .quote-text { font-size: 2rem; font-weight: 300; font-style: italic; }
 
-        .card-solucion { border: none; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; overflow: hidden; }
-        .card-solucion:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
-        .card-header-img { height: 200px; background-color: #eee; display: flex; align-items: center; justify-content: center; overflow: hidden;}
-        .card-header-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-        .card-solucion:hover .card-header-img img { transform: scale(1.1); }
+        /* NUEVOS Estilos de Tarjetas de Solución (Iguales a soluciones.html) */
+        .solucion-card {
+            border: none;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            background: #fff;
+            height: 100%; 
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .solucion-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+        }
+        .icon-box {
+            width: 80px;
+            height: 80px;
+            background: rgba(93, 136, 150, 0.1);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            color: var(--azul-argento);
+            font-size: 2.5rem;
+        }
+        .badge-tech {
+            background-color: #e9ecef;
+            color: var(--azul-argento);
+            font-size: 0.7rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 5px 12px;
+            border-radius: 50px;
+            margin-right: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
 
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         
-        footer { background-color: var(--azul-argento); color: white; padding: 60px 0; margin-top: 80px; }
+        footer { background-color: var(--azul-argento); color: white; padding: 60px 0; }
         footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
     </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <img src="img/logo-argento.png" alt="Argento" height="50">
@@ -54,31 +88,23 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav align-items-center">
-                    <li class="nav-item"><a class="nav-link menu-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link menu-link active" href="index.html">Inicio</a></li>
                     
                     <li class="nav-item dropdown">
                         <a class="nav-link menu-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Nosotros</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="nosotros.html">Quiénes Somos</a></li>
                             <li><a class="dropdown-item" href="clientes.html">Clientes</a></li>
-                            <li><a class="dropdown-item" href="partners.html">Partners y Alianzas</a></li>
+                            <li><a class="dropdown-item" href="partners.html">Alianzas</a></li>
                         </ul>
                     </li>
 
                     <li class="nav-item"><a class="nav-link menu-link" href="servicios.html">Servicios</a></li>
                     <li class="nav-item"><a class="nav-link menu-link" href="tecnologias.html">Tecnologías</a></li>
                     
-                    <li class="nav-item dropdown">
-                        <a class="nav-link menu-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Soluciones</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="soluciones.html#cms">CMS Central</a></li>
-                            <li><a class="dropdown-item" href="soluciones.html#sai">SAI Inmobiliaria</a></li>
-                            <li><a class="dropdown-item" href="soluciones.html#scg">SCG Gestión</a></li>
-                            <li><a class="dropdown-item" href="soluciones.html#carto">CARTO</a></li>
-                        </ul>
-                    </li>
+                    <li class="nav-item"><a class="nav-link menu-link" href="soluciones.html">Soluciones</a></li>
                     
-                    <li class="nav-item"><a class="nav-link menu-link" href="proyectos.html">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link menu-link" href="proyectos.html">Casos de Éxito</a></li>
                     <li class="nav-item ms-2"><a class="btn btn-dark rounded-pill px-4" href="contacto.html">Contacto</a></li>
                 </ul>
             </div>
@@ -92,7 +118,7 @@
                 <div class="carousel-caption d-none d-md-block">
                     <h1>Hacia la Modernización</h1>
                     <p class="fs-4">Transformación digital y tecnológica con verdadero impacto ciudadano.</p>
-                    <a href="proyectos.html" class="btn btn-lg btn-success rounded-pill mt-3 px-5">CASOS DE ÉXITO</a>
+                    <a href="#casos-de-exito" class="btn btn-lg btn-success rounded-pill mt-3 px-5">CASOS DE ÉXITO</a>
                 </div>
             </div>
             <div class="carousel-item">
@@ -122,52 +148,170 @@
     </section>
 
     <section class="py-5 bg-light">
-        <div class="container">
+        <div class="container py-5">
             <div class="text-center mb-5">
                 <h2 class="text-uppercase display-5" style="color:var(--azul-oscuro)">Nuestras Soluciones</h2>
                 <div style="width: 80px; height: 4px; background-color: var(--azul-argento); margin: 20px auto;"></div>
+                <p class="lead opacity-75">Ingeniería de vanguardia para los retos más complejos del sector público.</p>
             </div>
 
             <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card card-solucion h-100">
-                        <div class="card-header-img">
-                            <img src="img/sai_animado.gif" alt="SAI Inmobiliaria">
-                        </div>
-                        <div class="card-body text-center p-4">
-                            <h3 class="card-title mb-3">SAI Inmobiliaria</h3>
-                            <p class="card-text">Sistema de control predial, recaudación y trámites para administración pública.</p>
-                            <a href="soluciones.html#sai" class="btn btn-outline-dark rounded-pill mt-2">Ver Detalles</a>
-                        </div>
-                    </div>
-                </div>
                 
-                <div class="col-md-4">
-                    <div class="card card-solucion h-100">
-                        <div class="card-header-img">
-                            <img src="img/cms_animado.gif" alt="CMS Central">
+                <div class="col-lg-6">
+                    <div class="card solucion-card p-4 p-md-5">
+                        <div class="icon-box"><i class="bi bi-geo-alt-fill"></i></div>
+                        <div>
+                            <span class="badge-tech">CARTO Partner</span>
+                            <span class="badge-tech">SIG / GIS</span>
                         </div>
-                        <div class="card-body text-center p-4">
-                            <h3 class="card-title mb-3">CMS Central</h3>
-                            <p class="card-text">Ecosistema multiplataforma de administración de imagen y contenido para portales públicos.</p>
-                            <a href="soluciones.html#cms" class="btn btn-outline-dark rounded-pill mt-2">Ver Detalles</a>
-                        </div>
+                        <h3 class="h4 mb-3 mt-2">Inteligencia Geoespacial</h3>
+                        <p class="text-muted flex-grow-1">Implementación de Sistemas de Información Geográfica correlacionados con geo-alertas y paneles de control territoriales en tiempo real.</p>
+                        <a href="soluciones.html" class="btn btn-outline-dark rounded-pill mt-3 w-50 fw-bold">Ver Solución</a>
                     </div>
                 </div>
 
-                <div class="col-md-4">
-    <div class="card card-solucion h-100">
-        <div class="card-header-img">
-            <img src="img/carto_animado.gif" alt="Control de Gestión">
-        </div>
-        <div class="card-body text-center p-4">
-            <h3 class="card-title mb-3">Carto Inc.</h3>
-            <p class="card-text">Visualización de datos geoespaciales y análisis de datos para ciudades inteligentes (CDMX, Madrid, NY).</p>
-            <a href="soluciones.html#carto" class="btn btn-outline-dark rounded-pill mt-2">Ver Detalles</a>
-        </div>
-    </div>
-</div>
+                <div class="col-lg-6">
+                    <div class="card solucion-card p-4 p-md-5">
+                        <div class="icon-box"><i class="bi bi-cpu-fill"></i></div>
+                        <div>
+                            <span class="badge-tech">AlphaManaged</span>
+                            <span class="badge-tech">Omnicanal</span>
+                        </div>
+                        <h3 class="h4 mb-3 mt-2">CMS</h3>
+                        <p class="text-muted flex-grow-1">Ecosistema centralizado para la administración de redes de portales públicos con UX unificada y alta seguridad. Automatización de trámites ciudadanos.</p>
+                        <a href="soluciones.html" class="btn btn-outline-dark rounded-pill mt-3 w-50 fw-bold">Ver Solución</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="card solucion-card p-4 p-md-5">
+                        <div class="icon-box"><i class="bi bi-bank"></i></div>
+                        <div>
+                            <span class="badge-tech">SAP HANA / FIORI</span>
+                            <span class="badge-tech">Oracle GRP</span>
+                        </div>
+                        <h3 class="h4 mb-3 mt-2">Planeación de Recursos (GRP)</h3>
+                        <p class="text-muted flex-grow-1">Consultoría e implementación de soluciones Backoffice para el control presupuestal, contable y logístico integral del Estado.</p>
+                        <a href="soluciones.html" class="btn btn-outline-dark rounded-pill mt-3 w-50 fw-bold">Ver Solución</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="card solucion-card p-4 p-md-5">
+                        <div class="icon-box"><i class="bi bi-shield-lock-fill"></i></div>
+                        <div>
+                            <span class="badge-tech">Nube Privada</span>
+                            <span class="badge-tech">Cifrado E2E</span>
+                        </div>
+                        <h3 class="h4 mb-3 mt-2">Ciberseguridad & Infraestructura</h3>
+                        <p class="text-muted flex-grow-1">Diseño de arquitecturas escalables On-Premise y Cloud, garantizando la soberanía tecnológica y protección de datos gubernamentales.</p>
+                        <a href="soluciones.html" class="btn btn-outline-dark rounded-pill mt-3 w-50 fw-bold">Ver Solución</a>
+                    </div>
+                </div>
+
             </div>
+        </div>
+    </section>
+
+    <section class="py-5" style="background-color: #fff; border-top: 1px solid #eee;">
+        <div class="container">
+            <div class="text-center mb-4">
+                <p class="text-uppercase fw-bold mb-0" style="color: var(--azul-argento); letter-spacing: 4px; font-size: 1.0rem;">Instituciones que confían en nosotros</p>
+            </div>
+            <div class="row align-items-center justify-content-center g-4" style="opacity: 0.6; filter: grayscale(100%);">
+                
+                <div class="col-6 col-md-4 col-lg-2" style="height: 90px; display: flex; align-items: center; justify-content: center;">
+                    <img src="img/logo_imss.png" alt="IMSS" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg-2" style="height: 130px; display: flex; align-items: center; justify-content: center;">
+                    <img src="img/logo_cdmx.png" alt="CDMX" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg-2" style="height: 130px; display: flex; align-items: center; justify-content: center;">
+                    <img src="img/logo-bj.png" alt="Alcaldía Benito Juárez" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg-2" style="height: 80px; display: flex; align-items: center; justify-content: center;">
+                    <img src="img/logo-sefin.png" alt="Secretaría de Finanzas" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg-2" style="height: 90px; display: flex; align-items: center; justify-content: center;">
+                    <img src="img/logo-infonavit.png" alt="INFONAVIT" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg-2" style="height: 200px; display: flex; align-items: center; justify-content: center;">
+                    <img src="img/logo-sobse.png" alt="SOBSE" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="casos-de-exito" class="py-5" style="background-color: var(--azul-oscuro); color: white;">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold" style="font-family: 'Montserrat', sans-serif;">Casos de Éxito</h2>
+                <div style="width: 80px; height: 4px; background-color: var(--azul-argento); margin: 20px auto;"></div>
+                <p class="lead opacity-75">Resultados probados con impacto real en la administración pública.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="p-4 h-100 rounded-4" style="background-color: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+                        <div class="mb-4" style="height: 50px; display: flex; align-items: center;">
+                            <i class="bi bi-shield-check display-5" style="color: var(--azul-argento);"></i>
+                        </div>
+                        <h4 class="h6 fw-bold text-uppercase" style="letter-spacing: 1px;">e-Seguridad</h4>
+                        <p class="small opacity-75">Monitoreo de 1,800 patrullas mediante Location Intelligence. Ahorro de <strong>$82.9 MDP</strong> en combustible.</p>
+                        <hr class="opacity-25">
+                        <span class="badge bg-success">Impacto Económico</span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="p-4 h-100 rounded-4" style="background-color: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+                        <div class="mb-4" style="height: 50px; display: flex; align-items: center;">
+                            <i class="bi bi-pie-chart-fill display-5" style="color: var(--azul-argento);"></i>
+                        </div>
+                        <h4 class="h6 fw-bold text-uppercase" style="letter-spacing: 1px;">e-Finanzas</h4>
+                        <p class="small opacity-75">Identificación de redes de evasión y empresas fachada mediante análisis de Big Data y grafos.</p>
+                        <hr class="opacity-25">
+                        <span class="badge bg-info text-dark">Data Analytics</span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="p-4 h-100 rounded-4" style="background-color: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+                        <div class="mb-4" style="height: 50px; display: flex; align-items: center;">
+                            <i class="bi bi-building display-5" style="color: var(--azul-argento);"></i>
+                        </div>
+                        <h4 class="h6 fw-bold text-uppercase" style="letter-spacing: 1px;">e-Gobierno</h4>
+                        <p class="small opacity-75">Modernización de 100 unidades de gasto. Premio a la Innovación en Transparencia con <strong>24% de ahorro</strong>.</p>
+                        <hr class="opacity-25">
+                        <span class="badge bg-warning text-dark">Eficacia Pública</span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="p-4 h-100 rounded-4" style="background-color: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+                        <div class="mb-4" style="height: 50px; display: flex; align-items: center;">
+                            <i class="bi bi-graph-up-arrow display-5" style="color: var(--azul-argento);"></i>
+                        </div>
+                        <h4 class="h6 fw-bold text-uppercase" style="letter-spacing: 1px;">e-Finanzas</h4>
+                        <p class="small opacity-75">Crecimiento histórico de ingresos al <strong>3.26% del PIBE</strong> con red masiva de 8,470 puntos.</p>
+                        <hr class="opacity-25">
+                        <span class="badge bg-primary">Recaudación Digital</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="proyectos.html" class="btn btn-outline-light btn-lg rounded-pill px-5 fw-bold" style="letter-spacing: 1px; transition: all 0.3s;">
+                    VER TODOS LOS CASOS DE ÉXITO
+                </a>
+            </div>
+
         </div>
     </section>
 

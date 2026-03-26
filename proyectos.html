@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Argento | Proyectos y Casos de Éxito</title>
+    <title>Argento | Casos de Éxito</title>
     <link rel="icon" href="img/favicon.png" type="image/png">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,32 +16,58 @@
             --azul-oscuro: #2c3e50;
         }
         body { font-family: 'Roboto', sans-serif; color: var(--azul-oscuro); background-color: #f8f9fa; }
-        h1, h2, h3, h5, .nav-link, .btn { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+        h1, h2, h3, h4, h5, .nav-link, .btn { font-family: 'Montserrat', sans-serif; font-weight: 700; }
 
         .navbar { background-color: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .nav-link.menu-link { color: var(--azul-argento) !important; text-transform: uppercase; font-size: 0.85rem; font-weight: bold; letter-spacing: 1px; }
+        .nav-link.menu-link { color: var(--azul-argento) !important; text-transform: uppercase; font-size: 0.85rem; font-weight: bold; letter-spacing: 1px; transition: color 0.3s; }
         .nav-link.menu-link:hover { color: var(--azul-oscuro) !important; }
 
-        .page-header { background: linear-gradient(45deg, var(--azul-oscuro), var(--azul-argento)); color: white; padding: 100px 0 50px; text-align: center; }
+        .page-header { background: linear-gradient(45deg, var(--azul-oscuro), var(--azul-argento)); color: white; padding: 120px 0 60px; text-align: center; }
         
-        .project-card { border: none; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: transform 0.3s ease; height: 100%; display: flex; flex-direction: column; }
-        .project-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
-        .project-img { height: 220px; background-color: #e9ecef; object-fit: contain; width: 100%; display: flex; align-items: center; justify-content: center; color: #adb5bd; font-size: 3rem; padding: 20px; }
-        .project-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
-        
-        .tech-tags { margin-top: auto; margin-bottom: 15px; }
-        .badge-tech { background-color: #e2e8f0; color: #475569; font-weight: 500; font-size: 0.75rem; padding: 5px 10px; margin: 2px 2px 0 0; border-radius: 4px; display: inline-block; }
+        /* Estilos para las tarjetas de KPIs (Métricas) */
+        .kpi-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-bottom: 4px solid var(--azul-argento);
+            height: 100%;
+        }
+        .kpi-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--azul-oscuro);
+            line-height: 1;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .kpi-label {
+            font-size: 0.85rem;
+            color: #6c757d;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
 
-        .btn-story { background-color: transparent; color: var(--azul-argento); border: 2px solid var(--azul-argento); border-radius: 50px; font-size: 0.9rem; padding: 8px 20px; transition: all 0.3s; align-self: flex-start; }
-        .btn-story:hover { background-color: var(--azul-argento); color: white; }
+        .case-section { padding: 80px 0; border-bottom: 1px solid #e9ecef; }
+        .case-section:nth-child(even) { background-color: #fff; }
 
-        footer { background-color: var(--azul-argento); color: white; padding: 60px 0; margin-top: 80px; }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 20px;
+        }
+        .logo-container img { filter: grayscale(100%); opacity: 0.8; }
+
+        footer { background-color: var(--azul-argento); color: white; padding: 60px 0; }
         footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
     </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <img src="img/logo-argento.png" alt="Argento" height="50">
@@ -57,8 +83,8 @@
                         <a class="nav-link menu-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Nosotros</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="nosotros.html">Quiénes Somos</a></li>
-                            <li><a class="dropdown-item" href="clientes.html">Nuestros Clientes</a></li>
-                            <li><a class="dropdown-item" href="partners.html">Partners y Alianzas</a></li>
+                            <li><a class="dropdown-item" href="clientes.html">Clientes</a></li>
+                            <li><a class="dropdown-item" href="partners.html">Alianzas</a></li>
                         </ul>
                     </li>
 
@@ -75,7 +101,7 @@
                         </ul>
                     </li>
                     
-                    <li class="nav-item"><a class="nav-link menu-link active" href="proyectos.html">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link menu-link active" href="proyectos.html">Casos de Éxito</a></li>
                     <li class="nav-item ms-2"><a class="btn btn-dark rounded-pill px-4" href="contacto.html">Contacto</a></li>
                 </ul>
             </div>
@@ -83,167 +109,184 @@
     </nav>
 
     <header class="page-header">
-        <div class="container mt-4">
-            <h1 class="display-4 text-uppercase">Casos de Éxito [cite: 104]</h1>
-            <p class="lead">Resultados probados en e-Finanzas, e-Seguridad y e-Gobierno[cite: 25].</p>
+        <div class="container">
+            <h1 class="display-4 text-uppercase">Casos de Éxito</h1>
+            <p class="lead opacity-75">Transformación digital con impacto a escala nacional.</p>
         </div>
     </header>
 
-    <section class="container py-5">
-        <div class="row g-4 justify-content-center">
-
-            <div class="col-md-6 col-lg-4">
-                <div class="card project-card">
-                    <div class="project-img">
-                        <img src="img/cdmx.png" alt="Gobierno de la CDMX" style="max-height: 150px;">
+    <section class="case-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="logo-container" style="height: 100px;">
+                        <img src="img/logo-cdmx.png" alt="Gobierno de la CDMX" style="max-height: 100%; width: auto;">
                     </div>
-                    <div class="project-body">
-                        <p class="text-muted small text-uppercase mb-1"><i class="bi bi-tag-fill text-secondary"></i> e-Gobierno</p>
-                        <h4 class="card-title mb-2">SAP GRP Planeación [cite: 244]</h4>
-                        <p class="small fw-bold text-secondary mb-3">Cliente: Gobierno de la CDMX</p>
-                        <p class="card-text small mb-4">Mesa de soporte técnico y blindaje normativo GRP-SAP para más de 100 unidades ejecutoras del gasto público[cite: 225, 249].</p>
-                        
-                        <div class="tech-tags">
-                            <span class="badge-tech">SAP</span>
-                            <span class="badge-tech">LGCG</span>
-                            <span class="badge-tech">Datos Abiertos OCDS</span>
+                    <span class="badge bg-primary mb-3 px-3 py-2 text-uppercase letter-spacing-1">e-Finanzas</span>
+                    <h2 class="mb-4">Digitalización y Automatización: Crecimiento en Recaudación</h2>
+                    <p class="lead text-muted">La estrategia conjunta impulsó los ingresos locales a un máximo histórico mediante la consolidación de la disponibilidad de pagos y trámites.</p>
+                    <p>La implementación del ecosistema de Argento descentralizó la operación a través de una <strong>omnicanalidad masiva</strong>, optimizando los tiempos de respuesta en la emisión de certificaciones y constancias mediante trámites 100% en línea y adopción de autoservicio en Kioscos.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="kpi-card">
+                                <i class="bi bi-graph-up-arrow fs-2 text-primary mb-2"></i>
+                                <div class="kpi-number">3.26%</div>
+                                <div class="kpi-label">Del PIBE Alcanzado</div>
+                            </div>
                         </div>
-                        
-                        <button class="btn btn-story mt-3" data-bs-toggle="modal" data-bs-target="#modalProyecto1">
-                            Leer historia <i class="bi bi-arrow-right"></i>
-                        </button>
+                        <div class="col-6">
+                            <div class="kpi-card">
+                                <i class="bi bi-geo-alt-fill fs-2 text-primary mb-2"></i>
+                                <div class="kpi-number">8,470</div>
+                                <div class="kpi-label">Puntos de Atención</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="kpi-card">
+                                <i class="bi bi-pc-display fs-2 text-primary mb-2"></i>
+                                <div class="kpi-number">1.38 M</div>
+                                <div class="kpi-label">Operaciones en Kioscos</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="kpi-card">
+                                <i class="bi bi-cloud-check-fill fs-2 text-primary mb-2"></i>
+                                <div class="kpi-number">490k+</div>
+                                <div class="kpi-label">Trámites 100% en Línea</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="card project-card">
-                    <div class="project-img">
-                        <img src="img/alcaldía benito juárez.png" alt="Alcaldía Benito Juárez" style="max-height: 150px;">
-                    </div>
-                    <div class="project-body">
-                        <p class="text-muted small text-uppercase mb-1"><i class="bi bi-tag-fill text-secondary"></i> e-Seguridad</p>
-                        <h4 class="card-title mb-2">Sensorización de Flotas</h4>
-                        <p class="small fw-bold text-secondary mb-3">Cliente: Alcaldía Benito Juárez</p>
-                        <p class="card-text small mb-4">Visualización y control territorial en tiempo real para eficiencia presupuestaria y prevención de riesgos[cite: 107, 143].</p>
-                        
-                        <div class="tech-tags">
-                            <span class="badge-tech">Telemetría IoT</span>
-                            <span class="badge-tech">Location Intelligence</span>
-                            <span class="badge-tech">Carto</span>
-                        </div>
-                        
-                        <button class="btn btn-story mt-3" data-bs-toggle="modal" data-bs-target="#modalProyecto2">
-                            Leer historia <i class="bi bi-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="card project-card">
-                    <div class="project-img">
-                        <img src="img/imss.png" alt="IMSS" style="max-height: 150px;">
-                    </div>
-                    <div class="project-body">
-                        <p class="text-muted small text-uppercase mb-1"><i class="bi bi-tag-fill text-secondary"></i> e-Salud</p>
-                        <h4 class="card-title mb-2">Estrategia IMSS Digital [cite: 318]</h4>
-                        <p class="small fw-bold text-secondary mb-3">Cliente: IMSS Nivel Federal</p>
-                        <p class="card-text small mb-4">Arquitectura de alcance federal y nube privada para modernizar el modelo de atención a la ciudadanía[cite: 313, 317].</p>
-                        
-                        <div class="tech-tags">
-                            <span class="badge-tech">Arquitectura Empresarial</span>
-                            <span class="badge-tech">Nube Privada</span>
-                            <span class="badge-tech">App Móvil</span>
-                        </div>
-                        
-                        <button class="btn btn-story mt-3" data-bs-toggle="modal" data-bs-target="#modalProyecto3">
-                            Leer historia <i class="bi bi-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
 
-    <div class="modal fade" id="modalProyecto1" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header bg-light">
-                    <h5 class="modal-title" style="color: var(--azul-oscuro);">SAP GRP Planeación - CDMX</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <section class="case-section">
+        <div class="container">
+            <div class="row align-items-center flex-row-reverse">
+                <div class="col-lg-6 mb-5 mb-lg-0 ps-lg-5">
+                    <div class="logo-container" style="height: 120px;">
+                        <img src="img/logo-bj.png" alt="Alcaldía Benito Juárez" style="max-height: 100%; width: auto;">
+                    </div>
+                    <span class="badge bg-success mb-3 px-3 py-2 text-uppercase letter-spacing-1">e-Seguridad</span>
+                    <h2 class="mb-4">Location Intelligence para la Prevención del Delito</h2>
+                    <p class="lead text-muted">Optimización de recursos y monitoreo táctico en tiempo real para salvaguardar a la ciudadanía.</p>
+                    <p>Mediante la integración de la tecnología de <strong>CARTO</strong> y sistemas de telemetría avanzada, logramos crear un centro de mando capaz de visualizar la incidencia delictiva y correlacionarla con la operatividad de los elementos en campo, garantizando tiempos de respuesta récord y eficiencia en el gasto público.</p>
                 </div>
-                <div class="modal-body p-4">
-                    <h6 class="text-uppercase text-secondary fw-bold mb-2">El Reto</h6>
-                    <p>Gestión de escala y soporte técnico a más de 100 Unidades Ejecutoras del Gasto[cite: 225]. Garantizar la operación financiera y normativa bajo la Ley General de Contabilidad Gubernamental (LGCG) y cumplir con la exigencia de transparencia en formato abierto para combatir la corrupción[cite: 227, 229].</p>
-                    
-                    <h6 class="text-uppercase text-secondary fw-bold mb-2 mt-4">La Solución</h6>
-                    <p>Incorporación de consultores certificados en SAP para blindar el sistema GRP[cite: 223]. Se aseguró que la operación generara automáticamente los momentos contables exigidos por la LGCG en una base de datos única, publicando en tiempo real en formato JSON asegurando Transparencia Proactiva[cite: 249, 262].</p>
-
-                    <h6 class="text-uppercase fw-bold mb-2 mt-4" style="color: var(--azul-argento);"><i class="bi bi-check-circle-fill"></i> Impacto Directo</h6>
-                    <ul class="mb-0">
-                        <li><strong>Ahorro Multianual:</strong> Reducción efectiva del gasto del 24% comparado con las cotizaciones de otros concursantes[cite: 270].</li>
-                        <li><strong>Cero Observaciones:</strong> Cuentas públicas impecables y transparentes ante entes fiscalizadores[cite: 273].</li>
-                        <li><strong>Premio Transparencia:</strong> Reconocimiento por la implementación del Estándar de Datos de Contrataciones Abiertas (OCDS)[cite: 276].</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="modalProyecto2" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header bg-light">
-                    <h5 class="modal-title" style="color: var(--azul-oscuro);">Eficiencia Presupuestaria y Seguridad - Benito Juárez</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-4">
-                    <h6 class="text-uppercase text-secondary fw-bold mb-2">El Reto</h6>
-                    <p>Falta de visibilidad e incapacidad de conocer el consumo real de gasolina de las unidades en tiempo real[cite: 130]. Necesidad de gestionar una flota masiva de 1,800 patrullas, combatiendo la existencia de "ordeña" (extracción ilegal de combustible) estimada en un 30% del consumo total[cite: 132, 133].</p>
-                    
-                    <h6 class="text-uppercase text-secondary fw-bold mb-2 mt-4">La Solución</h6>
-                    <p>Instalación de hardware de precisión (sensores) en tanques y motores, con configuración de telemetría en tiempo real y transmisión de datos con delay de solo 45 segundos[cite: 135, 136]. Desarrollo de plataforma de Inteligencia Geoespacial sobre Carto para visualización de paneles[cite: 137, 141].</p>
-
-                    <h6 class="text-uppercase fw-bold mb-2 mt-4" style="color: var(--azul-argento);"><i class="bi bi-check-circle-fill"></i> Impacto Directo</h6>
-                    <ul class="mb-0">
-                        <li>Sostenibilidad del ahorro de $82.9M estableciendo un nuevo estándar operativo[cite: 164].</li>
-                        <li>100% de visibilidad de flota e integridad operativa en combustible (cero impunidad)[cite: 151, 152, 156].</li>
-                        <li>Optimización del patrullaje cruzando datos de GPS vs. Incidencia Delictiva[cite: 166].</li>
-                    </ul>
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="kpi-card" style="border-bottom-color: #198754;">
+                                <i class="bi bi-shield-check fs-2 text-success mb-2"></i>
+                                <div class="kpi-number">1,800</div>
+                                <div class="kpi-label">Patrullas Monitoreadas</div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="kpi-card" style="border-bottom-color: #198754;">
+                                <i class="bi bi-currency-dollar fs-2 text-success mb-2"></i>
+                                <div class="kpi-number">$82.9M</div>
+                                <div class="kpi-label">Ahorro en Combustible (MXN)</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="modal fade" id="modalProyecto3" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header bg-light">
-                    <h5 class="modal-title" style="color: var(--azul-oscuro);">Estrategia IMSS Digital - Nivel Federal</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <section class="case-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="logo-container" style="height: 50px;"> 
+                        <img src="img/logo-sat.png" alt="SAT" style="max-height: 100%; width: auto;">
+                    </div>
+                    <span class="badge bg-info text-dark mb-3 px-3 py-2 text-uppercase letter-spacing-1">e-Finanzas</span>
+                    <h2 class="mb-4">Big Data y Detección de Evasión Fiscal</h2>
+                    <p class="lead text-muted">Análisis masivo de vínculos patronales para combatir operaciones simuladas a nivel federal.</p>
+                    <p>Implementación de algoritmos de inteligencia de datos e infraestructura Big Data para cruzar millones de registros. Esta solución permitió a la autoridad fiscal identificar redes complejas de empresas fachada (EFOS y EDOS), incrementando la eficacia en la recaudación y la auditoría gubernamental.</p>
                 </div>
-                <div class="modal-body p-4">
-                    <h6 class="text-uppercase text-secondary fw-bold mb-2">El Reto</h6>
-                    <p>Crear una estrategia tecnológica capaz de cubrir y soportar la altísima demanda de servicios, modernizando el modelo de atención de la Institución a la ciudadanía en todo el país[cite: 316, 317].</p>
-                    
-                    <h6 class="text-uppercase text-secondary fw-bold mb-2 mt-4">La Solución</h6>
-                    <p>Implementación de la Estrategia IMSS Digital adoptando mejores prácticas en Arquitectura Empresarial[cite: 318, 319]. Se estructuró un modelo unificado de operación y un modelo moderno multicanal (Web, App, Kioskos) soportado por una Nube Privada Institucional de alta disponibilidad[cite: 328, 335, 340].</p>
-
-                    <h6 class="text-uppercase fw-bold mb-2 mt-4" style="color: var(--azul-argento);"><i class="bi bi-check-circle-fill"></i> Impacto Directo</h6>
-                    <ul class="mb-0">
-                        <li>Publicación exitosa de trámites 100% digitales[cite: 321].</li>
-                        <li><strong>Ahorro Ciudadano:</strong> Eliminación de gastos de transporte, copias y tiempos de traslado al realizar trámites en línea[cite: 322].</li>
-                        <li><strong>Ahorro Institucional:</strong> Reutilización y alineación de componentes clave para evitar duplicidad de gastos operativos[cite: 324].</li>
-                    </ul>
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="kpi-card" style="border-bottom-color: #0dcaf0;">
+                                <i class="bi bi-diagram-3-fill fs-2 text-info mb-2"></i>
+                                <div class="kpi-number">Grafos</div>
+                                <div class="kpi-label">Análisis de Vínculos Anómalos</div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="kpi-card" style="border-bottom-color: #0dcaf0;">
+                                <i class="bi bi-search fs-2 text-info mb-2"></i>
+                                <div class="kpi-number">IA</div>
+                                <div class="kpi-label">Detección de Empresas Fachada</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section class="case-section">
+        <div class="container">
+            <div class="row align-items-center flex-row-reverse">
+                <div class="col-lg-6 mb-5 mb-lg-0 ps-lg-5">
+                    <div class="logo-container" style="height: 70px;">
+                        <img src="img/logo-imss.png" alt="IMSS" style="max-height: 100%; width: auto;">
+                    </div>
+                    <span class="badge bg-warning text-dark mb-3 px-3 py-2 text-uppercase letter-spacing-1">Transformación Digital</span>
+                    <h2 class="mb-4">Modernización del Modelo de Atención Ciudadana</h2>
+                    <p class="lead text-muted">Reduciendo la brecha digital y acercando la seguridad social a millones de mexicanos.</p>
+                    <p>Participación en la estrategia integral para llevar los servicios de salud e incorporación institucional al entorno digital. A través de arquitecturas escalables y seguras, se logró migrar el volumen operativo de ventanillas físicas a ecosistemas Web y Móviles de alta disponibilidad.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="kpi-card" style="border-bottom-color: #ffc107;">
+                                <i class="bi bi-laptop fs-2 text-warning mb-2"></i>
+                                <div class="kpi-number">23</div>
+                                <div class="kpi-label">Trámites Federales Digitalizados</div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="kpi-card" style="border-bottom-color: #ffc107;">
+                                <i class="bi bi-clock-history fs-2 text-warning mb-2"></i>
+                                <div class="kpi-number">24/7</div>
+                                <div class="kpi-label">Disponibilidad Omnicanal</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="container text-center">
+            <div class="row">
+                <div class="col-md-4 text-md-start mb-4">
+                    <h5>ARGENTO</h5>
+                    <p class="small mt-3">Manuel María Contreras 133 P.B.<br>Edificio CONCAMIN, Col. Cuauhtémoc, CDMX.<br>Tel: 55 2121 7478 </p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>ENLACES RÁPIDOS</h5>
+                    <ul class="list-unstyled mt-3">
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <a href="#" class="fs-4 me-3"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="fs-4 me-3"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="fs-4"><i class="bi bi-twitter"></i></a>
+                </div>
+            </div>
+            <hr class="my-4" style="opacity: 0.2;">
             <p class="small mb-0">© 2026 Argento Technology Innovation. Todos los derechos reservados.</p>
         </div>
     </footer>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Argento | Nuestros Partners</title>
+    <title>Argento | Nuestros Clientes</title>
     <link rel="icon" href="img/favicon.png" type="image/png">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -19,38 +19,58 @@
         h1, h2, h3, h4, h5, .nav-link, .btn { font-family: 'Montserrat', sans-serif; font-weight: 700; }
 
         .navbar { background-color: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .nav-link.menu-link { color: var(--azul-argento) !important; text-transform: uppercase; font-size: 0.85rem; font-weight: bold; letter-spacing: 1px; }
+        .nav-link.menu-link { color: var(--azul-argento) !important; text-transform: uppercase; font-size: 0.85rem; font-weight: bold; letter-spacing: 1px; transition: color 0.3s; }
         .nav-link.menu-link:hover { color: var(--azul-oscuro) !important; }
 
-        .page-header { background: linear-gradient(45deg, var(--azul-oscuro), var(--azul-argento)); color: white; padding: 100px 0 50px; text-align: center; }
-        
-        .partner-card { border: none; border-radius: 12px; background-color: #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; padding: 40px 30px; height: 100%; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .partner-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-        
-        .partner-logo-box { height: 160px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; background-color: #f1f5f9; border-radius: 8px; color: #94a3b8; font-weight: bold; font-family: 'Montserrat', sans-serif; }
-        
-        .partner-logo-box img { 
-            max-height: 140px; 
-            max-width: 80%; 
-            object-fit: contain; 
-            mix-blend-mode: multiply;
+        .page-header { background: linear-gradient(45deg, var(--azul-oscuro), var(--azul-argento)); color: white; padding: 120px 0 60px; text-align: center; }
+
+        /* Estilos de la Galería de Clientes */
+        .client-box {
+            background-color: #fff;
+            border-radius: 15px;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            transition: all 0.4s ease;
+            border: 1px solid #f1f3f5;
+        }
+        .client-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
             filter: grayscale(100%);
-            opacity: 0.7;
+            opacity: 0.6;
             transition: all 0.4s ease;
         }
-
-        .partner-card:hover .partner-logo-box img {
+        /* Efecto Hover: Regresa a color y crece */
+        .client-box:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+            border-color: var(--azul-argento);
+        }
+        .client-box:hover img {
             filter: grayscale(0%);
             opacity: 1;
+            transform: scale(1.05);
         }
 
-        footer { background-color: var(--azul-argento); color: white; padding: 60px 0; margin-top: 80px; }
+        .cta-section {
+            background-color: var(--azul-oscuro);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        footer { background-color: var(--azul-argento); color: white; padding: 60px 0; }
         footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
     </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <img src="img/logo-argento.png" alt="Argento" height="50">
@@ -66,8 +86,8 @@
                         <a class="nav-link menu-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Nosotros</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="nosotros.html">Quiénes Somos</a></li>
-                            <li><a class="dropdown-item" href="clientes.html">Nuestros Clientes</a></li>
-                            <li><a class="dropdown-item active" href="partners.html">Partners y Alianzas</a></li>
+                            <li><a class="dropdown-item fw-bold" href="clientes.html">Clientes</a></li>
+                            <li><a class="dropdown-item" href="partners.html">Alianzas</a></li>
                         </ul>
                     </li>
 
@@ -84,7 +104,7 @@
                         </ul>
                     </li>
                     
-                    <li class="nav-item"><a class="nav-link menu-link" href="proyectos.html">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link menu-link" href="proyectos.html">Casos de Éxito</a></li>
                     <li class="nav-item ms-2"><a class="btn btn-dark rounded-pill px-4" href="contacto.html">Contacto</a></li>
                 </ul>
             </div>
@@ -92,125 +112,114 @@
     </nav>
 
     <header class="page-header">
-        <div class="container mt-4">
-            <h1 class="display-4 text-uppercase">Nuestros Partners</h1>
-            <p class="lead">Alianzas estratégicas y certificaciones tecnológicas para brindar las mejores soluciones.</p>
+        <div class="container">
+            <h1 class="display-4 text-uppercase">Nuestros Clientes</h1>
+            <p class="lead opacity-75">Instituciones y corporativos que respaldan nuestra capacidad técnica.</p>
         </div>
     </header>
 
-    <section class="container py-5 mt-4">
-        <div class="text-center mb-5">
-            <h2 class="text-uppercase" style="color: var(--azul-oscuro);">Alianzas Tecnológicas</h2>
-            <div style="width: 80px; height: 4px; background-color: var(--azul-argento); margin: 20px auto;"></div>
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="h2 mb-3 text-uppercase" style="color: var(--azul-oscuro);">Confianza a Escala Nacional</h2>
+                <div style="width: 80px; height: 4px; background-color: var(--azul-argento); margin: 0 auto 30px;"></div>
+                <p class="lead text-muted mx-auto" style="max-width: 800px;">
+                    Nos enorgullece ser el motor tecnológico detrás de las instituciones más exigentes de México. Cada logotipo representa una relación a largo plazo basada en resultados medibles, seguridad y cumplimiento estricto.
+                </p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="client-box">
+                        <img src="img/logo-imss.png" alt="IMSS">
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="client-box">
+                        <img src="img/logo-gobierno_jalisco.png" alt="GOBIERNO DE JALISCO">
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="client-box">
+                        <img src="img/logo-infonavit.png" alt="INFONAVIT">
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="client-box">
+                        <img src="img/logo-monterrey.png" alt="MONTERREY">
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="client-box">
+                        <img src="img/logo-sefin.png" alt="Secretaría de Finanzas">
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="client-box">
+                        <img src="img/logo-cdmx.png" alt="CDMX">
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="client-box">
+                        <img src="img/logo-bj.png" alt="Alcaldía Benito Juárez">
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="client-box">
+                        <img src="img/logo-sobse.png" alt="SOBSE">
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="client-box">
+                        <img src="img/logo-siapa.png" alt="SIAPA">
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="client-box">
+                        <img src="img/logo-san_pedro_garza.png" alt="SAN PEDRO GARZA">
+                    </div>
+                </div>
+
+            </div>
         </div>
+    </section>
 
-        <div class="row g-4 justify-content-center">
-            
-            <div class="col-md-6 col-lg-4">
-                <div class="partner-card">
-                    <div class="partner-logo-box">
-                        <img src="img/microsoft.png" alt="Microsoft" onerror="this.style.display='none'">
-                    </div>
-                    <h4 class="mb-3">Microsoft</h4>
-                    <p class="text-muted small">Es una multinacional tecnológica que se ha consolidado como uno de los líderes mundiales en el desarrollo de software, servicios, dispositivos y soluciones tecnológicas.</p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="partner-card">
-                    <div class="partner-logo-box">
-                        <img src="img/huawei.png" alt="Huawei" onerror="this.style.display='none'">
-                    </div>
-                    <h4 class="mb-3">Huawei</h4>
-                    <p class="text-muted small">Es un líder mundial en infraestructura de tecnologías de la información y comunicación (TIC) y dispositivos inteligentes.</p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="partner-card">
-                    <div class="partner-logo-box">
-                        <img src="img/adobe.png" alt="Adobe" onerror="this.style.display='none'">
-                    </div>
-                    <h4 class="mb-3">Adobe</h4>
-                    <p class="text-muted small">Es una empresa líder en software tecnológico, reconocida por crear herramientas estándar en la industria para la creación, edición y publicación de contenido digital.</p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="partner-card">
-                    <div class="partner-logo-box">
-                        <img src="img/bentley.png" alt="Bentley" onerror="this.style.display='none'">
-                    </div>
-                    <h4 class="mb-3">Bentley Systems</h4>
-                    <p class="text-muted small">Es una empresa líder global dedicada al desarrollo de software de ingeniería de infraestructura.</p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="partner-card">
-                    <div class="partner-logo-box">
-                        <img src="img/ingram.png" alt="Ingram Micro" onerror="this.style.display='none'">
-                    </div>
-                    <h4 class="mb-3">Ingram Micro</h4>
-                    <p class="text-muted small">Es el mayor distribuidor de tecnología y proveedor de soluciones de TI del mundo, actuando como el motor logístico y de distribución "detrás de escena".</p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="partner-card">
-                    <div class="partner-logo-box">
-                        <img src="img/nexsys.png" alt="Nexsys" onerror="this.style.display='none'">
-                    </div>
-                    <h4 class="mb-3">Nexsys</h4>
-                    <p class="text-muted small">Intermediario estratégico entre más de 45 fabricantes líderes mundiales (como Adobe, Microsoft, IBM) y una red de socios, resellers, e integradores.</p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="partner-card">
-                    <div class="partner-logo-box">
-                        <img src="img/carto.png" alt="Carto Inc." onerror="this.style.display='none'">
-                    </div>
-                    <h4 class="mb-3">Carto Inc.</h4>
-                    <p class="text-muted small">Plataforma líder para la creación de potentes aplicaciones de inteligencia de ubicación (Location Intelligence).</p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="partner-card">
-                    <div class="partner-logo-box">
-                        <img src="img/axialtic.png" alt="Axialtic" onerror="this.style.display='none'">
-                    </div>
-                    <h4 class="mb-3">Axialtic</h4>
-                    <p class="text-muted small">Empresa con más de 15 años de experiencia en el aporte de soluciones tecnológicas innovadoras, atractivas y sencillas.</p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="partner-card">
-                    <div class="partner-logo-box">
-                        <img src="img/add4u.png" alt="add4u" onerror="this.style.display='none'">
-                    </div>
-                    <h4 class="mb-3">add4u</h4>
-                    <p class="text-muted small">Plataforma especializada en la regeneración de los servicios públicos, fomentando transparencia y mejor atención ciudadana.</p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="partner-card">
-                    <div class="partner-logo-box">
-                        <img src="img/logo-setesa.png" alt="SETESA" onerror="this.style.display='none'">
-                    </div>
-                    <h4 class="mb-3">SETESA</h4>
-                    <p class="text-muted small">Servicios de topografía, geodesia, fotogrametría y consultoría en materia agraria, social y de obras privadas y públicas.</p>
-                </div>
-            </div>
-
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="display-6 fw-bold mb-4" style="font-family: 'Montserrat', sans-serif;">Descubre cómo transformamos sus operaciones</h2>
+            <p class="lead opacity-75 mb-5 mx-auto" style="max-width: 700px;">Conoce los ahorros millonarios, la optimización de procesos y el impacto ciudadano que logramos en conjunto con nuestros clientes.</p>
+            <a href="proyectos.html" class="btn btn-outline-light btn-lg rounded-pill px-5 fw-bold" style="letter-spacing: 1px;">
+                VER CASOS DE ÉXITO
+            </a>
         </div>
     </section>
 
     <footer>
         <div class="container text-center">
+            <div class="row">
+                <div class="col-md-4 text-md-start mb-4">
+                    <h5>ARGENTO</h5>
+                    <p class="small mt-3">Manuel María Contreras 133 P.B.<br>Edificio CONCAMIN, Col. Cuauhtémoc, CDMX.<br>Tel: 55 2121 7478 </p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>ENLACES RÁPIDOS</h5>
+                    <ul class="list-unstyled mt-3">
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <a href="#" class="fs-4 me-3"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="fs-4 me-3"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="fs-4"><i class="bi bi-twitter"></i></a>
+                </div>
+            </div>
+            <hr class="my-4" style="opacity: 0.2;">
             <p class="small mb-0">© 2026 Argento Technology Innovation. Todos los derechos reservados.</p>
         </div>
     </footer>

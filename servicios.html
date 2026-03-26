@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Argento | Nuestros Servicios</title>
+    <title>Argento | Servicios</title>
     <link rel="icon" href="img/favicon.png" type="image/png">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,44 +16,83 @@
             --azul-oscuro: #2c3e50;
         }
         body { font-family: 'Roboto', sans-serif; color: var(--azul-oscuro); background-color: #f8f9fa; }
-        h1, h2, h3, h5, .nav-link, .btn { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+        h1, h2, h3, h4, h5, .nav-link, .btn { font-family: 'Montserrat', sans-serif; font-weight: 700; }
 
         .navbar { background-color: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .nav-link.menu-link { color: var(--azul-argento) !important; text-transform: uppercase; font-size: 0.85rem; font-weight: bold; letter-spacing: 1px; }
+        .nav-link.menu-link { color: var(--azul-argento) !important; text-transform: uppercase; font-size: 0.85rem; font-weight: bold; letter-spacing: 1px; transition: color 0.3s; }
         .nav-link.menu-link:hover { color: var(--azul-oscuro) !important; }
 
-        .page-header { background: linear-gradient(45deg, var(--azul-oscuro), var(--azul-argento)); color: white; padding: 100px 0 50px; text-align: center; }
-        
-        .nav-tabs { border-bottom: 2px solid #dee2e6; margin-bottom: 30px; justify-content: center; }
-        .nav-tabs .nav-link { color: #6c757d; border: none; border-bottom: 3px solid transparent; font-size: 1rem; padding: 10px 15px; transition: all 0.3s; font-weight: bold; }
-        .nav-tabs .nav-link:hover { color: var(--azul-argento); }
-        .nav-tabs .nav-link.active { color: var(--azul-oscuro); border-bottom: 3px solid var(--azul-argento); background: transparent; }
+        .page-header { background: linear-gradient(45deg, var(--azul-oscuro), var(--azul-argento)); color: white; padding: 120px 0 60px; text-align: center; }
 
-        .service-card { border: none; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.2s; height: 100%; }
-        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        
-        .service-custom-img { 
-            width: 195px; 
-            height: 195px; 
-            object-fit: contain; 
-            margin: 0 auto 20px auto; 
-            display: block; 
+        /* Estilos de las Tarjetas de Servicios */
+        .service-card {
+            background: #fff;
+            border: none;
+            border-radius: 15px;
+            padding: 40px 30px;
+            height: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
         }
-        
-        .badge-tech { 
-            background-color: #e9ecef; color: var(--azul-oscuro); font-weight: 500; font-size: 0.85rem; 
-            padding: 6px 15px; margin: 4px; border-radius: 20px; border: 1px solid #ced4da; 
-            display: inline-block; text-decoration: none; transition: all 0.3s ease;
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            background: var(--azul-argento);
+            transition: all 0.3s ease;
+            z-index: -1;
         }
-        .badge-tech:hover { background-color: var(--azul-argento); color: white; border-color: var(--azul-argento); transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .service-card:hover::before { height: 100%; opacity: 0.03; }
+        
+        .service-icon {
+            width: 70px; height: 70px;
+            background: var(--azul-oscuro);
+            color: white;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 20px rgba(44, 62, 80, 0.2);
+        }
 
-        footer { background-color: var(--azul-argento); color: white; padding: 60px 0; margin-top: 80px; }
+        /* Estilos de Metodología */
+        .step-box { text-align: center; position: relative; padding: 20px; }
+        .step-number {
+            width: 60px; height: 60px;
+            background: var(--azul-argento);
+            color: white; font-size: 1.5rem; font-weight: bold;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 20px;
+            font-family: 'Montserrat', sans-serif;
+            border: 5px solid #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 2;
+        }
+        /* Línea conectora solo en pantallas grandes */
+        @media (min-width: 992px) {
+            .step-box:not(:last-child)::after {
+                content: ''; position: absolute;
+                top: 50px; right: -50%; width: 100%; height: 2px;
+                background: #dee2e6; z-index: 1;
+            }
+        }
+
+        footer { background-color: var(--azul-argento); color: white; padding: 60px 0; }
         footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
     </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <img src="img/logo-argento.png" alt="Argento" height="50">
@@ -69,8 +108,8 @@
                         <a class="nav-link menu-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Nosotros</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="nosotros.html">Quiénes Somos</a></li>
-                            <li><a class="dropdown-item" href="clientes.html">Nuestros Clientes</a></li>
-                            <li><a class="dropdown-item" href="partners.html">Partners y Alianzas</a></li>
+                            <li><a class="dropdown-item" href="clientes.html">Clientes</a></li>
+                            <li><a class="dropdown-item" href="partners.html">Alianzas</a></li>
                         </ul>
                     </li>
 
@@ -87,7 +126,7 @@
                         </ul>
                     </li>
                     
-                    <li class="nav-item"><a class="nav-link menu-link" href="proyectos.html">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link menu-link" href="proyectos.html">Casos de Éxito</a></li>
                     <li class="nav-item ms-2"><a class="btn btn-dark rounded-pill px-4" href="contacto.html">Contacto</a></li>
                 </ul>
             </div>
@@ -95,199 +134,136 @@
     </nav>
 
     <header class="page-header">
-        <div class="container mt-4">
+        <div class="container">
             <h1 class="display-4 text-uppercase">Nuestros Servicios</h1>
-            <p class="lead">Soluciones a la medida con las tecnologías más robustas del mercado.</p>
+            <p class="lead opacity-75">Acompañamiento estratégico, desarrollo e implementación tecnológica a tu medida.</p>
         </div>
     </header>
 
-    <section class="container py-5">
-        
-        <ul class="nav nav-tabs flex-wrap" id="serviciosTab" role="tablist">
-            <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#desarrollo" type="button" role="tab">Desarrollo</button></li>
-            <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#web" type="button" role="tab">Sitios Web y Apps</button></li>
-            <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#serviciosweb" type="button" role="tab">Servicios Web</button></li>
-            <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#bd" type="button" role="tab">Bases de Datos</button></li>
-            <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#servidores" type="button" role="tab">Servidores</button></li>
-            <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#innovacion" type="button" role="tab">Innovación</button></li>
-        </ul>
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="h1 mb-3">Capacidad de Ejecución</h2>
+                <div style="width: 80px; height: 4px; background-color: var(--azul-argento); margin: 0 auto;"></div>
+                <p class="mt-3 text-muted">Contamos con equipos multidisciplinarios certificados para garantizar el éxito de tu proyecto.</p>
+            </div>
 
-        <div class="tab-content mt-4" id="serviciosTabContent">
+            <div class="row g-4">
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-diagram-2"></i></div>
+                        <h3 class="h5 mb-3">Consultoría y Arquitectura TI</h3>
+                        <p class="text-muted small mb-0">Análisis exhaustivo de tus procesos actuales para diseñar arquitecturas tecnológicas escalables. Alineamos las herramientas de TI con los objetivos de negocio y la normativa gubernamental (LGCG).</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-code-slash"></i></div>
+                        <h3 class="h5 mb-3">Software Factory (Desarrollo)</h3>
+                        <p class="text-muted small mb-0">Células de desarrollo ágil para crear soluciones a la medida. Desde integraciones vía API hasta ecosistemas omnicanal complejos y portales de atención ciudadana de alta disponibilidad.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-hdd-network"></i></div>
+                        <h3 class="h5 mb-3">Implementación e Infraestructura</h3>
+                        <p class="text-muted small mb-0">Despliegue de sistemas críticos On-Premise y en Nube Privada. Garantizamos la soberanía de datos y la correcta instalación de ecosistemas de gran tamaño como SAP FIORI y Oracle GRP.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-shield-check"></i></div>
+                        <h3 class="h5 mb-3">Ciberseguridad y Auditoría</h3>
+                        <p class="text-muted small mb-0">Protección integral de infraestructuras de misión crítica. Realizamos análisis de vulnerabilidades, blindaje de servidores y aseguramiento de redes para prevenir fugas de información confidencial.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-headset"></i></div>
+                        <h3 class="h5 mb-3">Soporte Especializado NOC/SOC</h3>
+                        <p class="text-muted small mb-0">Centro de Operaciones de Red y Seguridad (NOC/SOC) con monitoreo 24/7. Cumplimiento estricto de SLAs, mantenimiento preventivo y respuesta a incidentes en tiempo real.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-people"></i></div>
+                        <h3 class="h5 mb-3">Gestión del Cambio Institucional</h3>
+                        <p class="text-muted small mb-0">Programas de capacitación técnica y transferencia de conocimientos para funcionarios públicos y personal corporativo, asegurando una adopción tecnológica rápida y sin fricciones.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" style="background-color: #fff; border-top: 1px solid #eee;">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="h2 mb-3">Nuestra Metodología</h2>
+                <p class="text-muted">Un proceso estructurado para mitigar riesgos operacionales.</p>
+            </div>
             
-            <div class="tab-pane fade show active" id="desarrollo" role="tabpanel">
-                <div class="row g-4">
-                    <div class="col-md-6">
-                        <div class="card service-card p-4 text-center">
-                            <img src="img/desarrollo%20de%20sistemas%20a%20la%20medida.png" class="service-custom-img" alt="Desarrollo a la Medida" onerror="this.style.display='none'">
-                            <h4>Desarrollo de Sistemas a la Medida</h4>
-                            <p>Desarrollo de sistemas web y de escritorio, reingeniería de sistemas y mejora de procesos operativos.</p>
-                            <div class="mt-3 d-flex flex-wrap justify-content-center">
-                                <a href="tecnologias.html" class="badge-tech">Java</a>
-                                <a href="tecnologias.html" class="badge-tech">.NET</a>
-                                <a href="tecnologias.html" class="badge-tech">PHP</a>
-                                <a href="tecnologias.html" class="badge-tech">Python</a>
-                                <a href="tecnologias.html" class="badge-tech">Oracle EBS</a>
-                                <a href="tecnologias.html" class="badge-tech">SAP (Flex y ABAP)</a>
-                                <a href="tecnologias.html" class="badge-tech">Adobe</a>
-                            </div>
-                        </div>
+            <div class="row g-4 mt-2">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="step-box">
+                        <div class="step-number">1</div>
+                        <h4 class="h6 fw-bold">Análisis y Diagnóstico</h4>
+                        <p class="small text-muted mb-0">Levantamiento de requerimientos y auditoría de la infraestructura existente.</p>
                     </div>
-                    <div class="col-md-6">
-                        <div class="card service-card p-4 text-center">
-                            <img src="img/mantenimiento%20de%20sistemas%20legados.png" class="service-custom-img" alt="Sistemas Legados" onerror="this.style.display='none'">
-                            <h4>Mantenimiento de Sistemas Legados</h4>
-                            <p>Actualización, soporte y prevención para tecnologías anteriores asegurando la continuidad de tu negocio.</p>
-                            <div class="mt-3 d-flex flex-wrap justify-content-center">
-                                <a href="tecnologias.html" class="badge-tech">Clipper</a>
-                                <a href="tecnologias.html" class="badge-tech">Dbase</a>
-                                <a href="tecnologias.html" class="badge-tech">FoxPro / Visual FoxPro</a>
-                                <a href="tecnologias.html" class="badge-tech">Cobol</a>
-                                <a href="tecnologias.html" class="badge-tech">Crystal Reports</a>
-                            </div>
-                        </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="step-box">
+                        <div class="step-number">2</div>
+                        <h4 class="h6 fw-bold">Diseño de Solución</h4>
+                        <p class="small text-muted mb-0">Creación de arquitectura técnica, UX/UI y plan de proyecto con cronogramas.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="step-box">
+                        <div class="step-number">3</div>
+                        <h4 class="h6 fw-bold">Despliegue y Pruebas</h4>
+                        <p class="small text-muted mb-0">Implementación, migración de datos y pruebas de estrés (QA) rigurosas.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="step-box">
+                        <div class="step-number">4</div>
+                        <h4 class="h6 fw-bold">Operación y Soporte</h4>
+                        <p class="small text-muted mb-0">Salida a producción (Go-Live) con monitoreo continuo y pólizas de soporte.</p>
                     </div>
                 </div>
             </div>
-
-            <div class="tab-pane fade" id="web" role="tabpanel">
-                <div class="row g-4">
-                    <div class="col-md-6">
-                        <div class="card service-card p-4 text-center">
-                            <img src="img/creacio%CC%81n%20de%20pa%CC%81ginas%20web%20esta%CC%81ticas%20y%20dina%CC%81micas.png" class="service-custom-img" alt="Creación Web" onerror="this.style.display='none'">
-                            <h4>Creación y Mantenimiento Web</h4>
-                            <p>Desarrollo de páginas estáticas y dinámicas, web testing, planes de alojamiento y CMS personalizados.</p>
-                            <div class="mt-3 d-flex flex-wrap justify-content-center">
-                                <a href="tecnologias.html" class="badge-tech">HTML5 / JavaScript</a>
-                                <a href="tecnologias.html" class="badge-tech">CMS Personalizados</a>
-                                <a href="tecnologias.html" class="badge-tech">Planes de Alojamiento</a>
-                                <a href="tecnologias.html" class="badge-tech">Mantenimiento Web</a>
-                                <a href="tecnologias.html" class="badge-tech">Web testing</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card service-card p-4 text-center">
-                            <img src="img/ios.png" class="service-custom-img" alt="Apps Móviles" onerror="this.style.display='none'">
-                            <h4>Aplicaciones Móviles</h4>
-                            <p>Evoluciona tu empresa con una aplicación móvil diseñada a tu medida y adaptada a tu infraestructura.</p>
-                            <div class="mt-3 d-flex flex-wrap justify-content-center">
-                                <a href="tecnologias.html" class="badge-tech">iOS (Swift)</a>
-                                <a href="tecnologias.html" class="badge-tech">Android (Java)</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tab-pane fade" id="serviciosweb" role="tabpanel">
-                <div class="row g-4 justify-content-center">
-                    <div class="col-md-8">
-                        <div class="card service-card p-4 text-center">
-                            <img src="img/rest.png" class="service-custom-img mx-auto" alt="Servicios Web" onerror="this.style.display='none'">
-                            <h4>Servicios Web e Integraciones</h4>
-                            <p>Interconexión de sistemas, desarrollo de APIs y comunicación de datos entre plataformas.</p>
-                            <div class="mt-3 d-flex flex-wrap justify-content-center">
-                                <a href="tecnologias.html" class="badge-tech">SOAP</a>
-                                <a href="tecnologias.html" class="badge-tech">REST</a>
-                                <a href="tecnologias.html" class="badge-tech">APIs</a>
-                                <a href="tecnologias.html" class="badge-tech">Java</a>
-                                <a href="tecnologias.html" class="badge-tech">PHP</a>
-                                <a href="tecnologias.html" class="badge-tech">.Net</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tab-pane fade" id="bd" role="tabpanel">
-                <div class="row g-4 justify-content-center">
-                    <div class="col-md-10">
-                        <div class="card service-card p-4 text-center">
-                            <img src="img/administracio%CC%81n%20bases%20de%20datos.png" class="service-custom-img mx-auto" alt="Bases de Datos" onerror="this.style.display='none'">
-                            <h4>Servicios de Datos</h4>
-                            <p>Instalación, administración, mantenimiento, migración y optimización (tuning) en diferentes motores.</p>
-                            <div class="mt-3 d-flex flex-wrap justify-content-center">
-                                <a href="tecnologias.html" class="badge-tech">Oracle</a>
-                                <a href="tecnologias.html" class="badge-tech">SQL Server</a>
-                                <a href="tecnologias.html" class="badge-tech">PostgreSQL</a>
-                                <a href="tecnologias.html" class="badge-tech">MySQL</a>
-                                <a href="tecnologias.html" class="badge-tech">MongoDB</a>
-                                <a href="tecnologias.html" class="badge-tech">MariaDB</a>
-                                <a href="tecnologias.html" class="badge-tech">Access</a>
-                                <a href="tecnologias.html" class="badge-tech">Database Tuning</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tab-pane fade" id="servidores" role="tabpanel">
-                <div class="row g-4">
-                    <div class="col-md-6">
-                        <div class="card service-card p-4 text-center">
-                            <img src="img/administracio%CC%81n%20de%20servidores.png" class="service-custom-img" alt="Servidores" onerror="this.style.display='none'">
-                            <h4>Administración e Instalación</h4>
-                            <p>Instalación y mantenimiento de servidores físicos y virtuales. Análisis de rendimiento.</p>
-                            <div class="mt-3 d-flex flex-wrap justify-content-center">
-                                <a href="tecnologias.html" class="badge-tech">Servidores Físicos</a>
-                                <a href="tecnologias.html" class="badge-tech">Servidores Virtuales</a>
-                                <a href="tecnologias.html" class="badge-tech">VMWare</a>
-                                <a href="tecnologias.html" class="badge-tech">XEN</a>
-                                <div class="w-100 mt-2"></div>
-                                <strong class="small text-muted w-100 mb-1">Sistemas Operativos:</strong>
-                                <a href="tecnologias.html" class="badge-tech">Linux</a>
-                                <a href="tecnologias.html" class="badge-tech">Unix</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card service-card p-4 text-center">
-                            <img src="img/migracio%CC%81n%20a%20la%20nube.png" class="service-custom-img" alt="Nube" onerror="this.style.display='none'">
-                            <h4>Migración a la Nube</h4>
-                            <p>Migración de servidores a entornos de nube (pública, privada o híbrida) garantizando escalabilidad.</p>
-                            <div class="mt-3 d-flex flex-wrap justify-content-center">
-                                <a href="tecnologias.html" class="badge-tech">Amazon Web Services (AWS)</a>
-                                <a href="tecnologias.html" class="badge-tech">Google Cloud</a>
-                                <a href="tecnologias.html" class="badge-tech">MS Azure</a>
-                                <a href="tecnologias.html" class="badge-tech">Oracle Cloud</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tab-pane fade" id="innovacion" role="tabpanel">
-                <div class="row g-4 justify-content-center">
-                    <div class="col-md-10">
-                        <div class="card service-card p-4 text-center">
-                            <img src="img/arquitectura%20de%20datos.png" class="service-custom-img" alt="Innovación" onerror="this.style.display='none'">
-                            <h4>Servicios de Innovación y Big Data</h4>
-                            <p>Transformamos tus datos en decisiones estratégicas. Diseñamos arquitectura empresarial con enfoque absoluto en procesos eficientes y soberanía de datos.</p>
-                            <div class="mt-3 d-flex flex-wrap justify-content-center">
-                                <a href="tecnologias.html" class="badge-tech">Ciencia de Datos</a>
-                                <a href="tecnologias.html" class="badge-tech">Soluciones Big Data</a>
-                                <a href="tecnologias.html" class="badge-tech">Gobierno de Datos</a>
-                                <a href="tecnologias.html" class="badge-tech">Minería de Datos</a>
-                                <a href="tecnologias.html" class="badge-tech">Arquitectura de Datos</a>
-                                <a href="tecnologias.html" class="badge-tech">Arquitectura Empresarial</a>
-                                <a href="tecnologias.html" class="badge-tech">Software Libre</a>
-                                <div class="w-100 mt-2"></div>
-                                <strong class="small text-muted w-100 mb-1">Inteligencia de Negocios:</strong>
-                                <a href="tecnologias.html" class="badge-tech">Tableau</a>
-                                <a href="tecnologias.html" class="badge-tech">Qlikview</a>
-                                <a href="tecnologias.html" class="badge-tech">PowerBI</a>
-                                <a href="tecnologias.html" class="badge-tech">Oracle Analytics Cloud</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
 
     <footer>
         <div class="container text-center">
+            <div class="row">
+                <div class="col-md-4 text-md-start mb-4">
+                    <h5>ARGENTO</h5>
+                    <p class="small mt-3">Manuel María Contreras 133 P.B.<br>Edificio CONCAMIN, Col. Cuauhtémoc, CDMX.<br>Tel: 55 2121 7478 </p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>ENLACES RÁPIDOS</h5>
+                    <ul class="list-unstyled mt-3">
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <a href="#" class="fs-4 me-3"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="fs-4 me-3"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="fs-4"><i class="bi bi-twitter"></i></a>
+                </div>
+            </div>
+            <hr class="my-4" style="opacity: 0.2;">
             <p class="small mb-0">© 2026 Argento Technology Innovation. Todos los derechos reservados.</p>
         </div>
     </footer>

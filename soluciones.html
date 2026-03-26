@@ -14,10 +14,7 @@
         :root {
             --azul-argento: #5d8896;
             --azul-oscuro: #2c3e50;
-            --verde-acento: #25d366;
         }
-        html { scroll-behavior: smooth; }
-        
         body { font-family: 'Roboto', sans-serif; color: var(--azul-oscuro); background-color: #f8f9fa; }
         h1, h2, h3, h4, h5, .nav-link, .btn { font-family: 'Montserrat', sans-serif; font-weight: 700; }
 
@@ -25,54 +22,61 @@
         .nav-link.menu-link { color: var(--azul-argento) !important; text-transform: uppercase; font-size: 0.85rem; font-weight: bold; letter-spacing: 1px; }
         .nav-link.menu-link:hover { color: var(--azul-oscuro) !important; }
 
-        .page-header { background: linear-gradient(45deg, var(--azul-oscuro), var(--azul-argento)); color: white; padding: 100px 0 50px; text-align: center; }
-        
-        .solucion-section { 
-            padding: 80px 0; 
-            background-color: #fff; 
-            border-bottom: 1px solid #eee;
-            scroll-margin-top: 80px; 
+        .page-header { 
+            background: linear-gradient(45deg, var(--azul-oscuro), var(--azul-argento)); 
+            color: white; 
+            padding: 120px 0 60px; 
+            text-align: center; 
         }
-        .solucion-section:nth-child(even) { background-color: #f8f9fa; }
-        
-        .solucion-img { 
-            background-color: #f8fafc; 
-            border-radius: 15px; 
-            height: 400px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            color: #adb5bd; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            overflow: hidden;
-            padding: 20px;
-        }
-        
-        .solucion-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            filter: grayscale(100%);
-            opacity: 0.7;
-            transition: all 0.4s ease;
-        }
-        
-        .solucion-section:hover .solucion-img img {
-            filter: grayscale(0%);
-            opacity: 1;
-            transform: scale(1.05);
-        }
-        
-        .feature-list li { margin-bottom: 10px; display: flex; align-items: flex-start; }
-        .feature-list i { color: var(--azul-argento); font-size: 1.2rem; margin-right: 15px; }
 
-        footer { background-color: var(--azul-argento); color: white; padding: 60px 0; }
+        /* Estilo de Tarjetas de Solución CORREGIDO (Sin límite estricto de altura) */
+        .solucion-card {
+            border: none;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            background: #fff;
+            height: 100%; /* Permite que crezcan parejas */
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .solucion-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+        }
+        .icon-box {
+            width: 80px;
+            height: 80px;
+            background: rgba(93, 136, 150, 0.1);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            color: var(--azul-argento);
+            font-size: 2.5rem;
+        }
+        
+        .badge-tech {
+            background-color: #e9ecef;
+            color: var(--azul-argento);
+            font-size: 0.7rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 5px 12px;
+            border-radius: 50px;
+            margin-right: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        footer { background-color: var(--azul-argento); color: white; padding: 40px 0; margin-top: 80px; }
         footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
     </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <img src="img/logo-argento.png" alt="Argento" height="50">
@@ -88,25 +92,17 @@
                         <a class="nav-link menu-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Nosotros</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="nosotros.html">Quiénes Somos</a></li>
-                            <li><a class="dropdown-item" href="clientes.html">Nuestros Clientes</a></li>
-                            <li><a class="dropdown-item" href="partners.html">Partners y Alianzas</a></li>
+                            <li><a class="dropdown-item" href="clientes.html">Clientes</a></li>
+                            <li><a class="dropdown-item" href="partners.html">Alianzas</a></li>
                         </ul>
                     </li>
 
                     <li class="nav-item"><a class="nav-link menu-link" href="servicios.html">Servicios</a></li>
                     <li class="nav-item"><a class="nav-link menu-link" href="tecnologias.html">Tecnologías</a></li>
                     
-                    <li class="nav-item dropdown">
-                        <a class="nav-link menu-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Soluciones</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="soluciones.html#cms">CMS Central</a></li>
-                            <li><a class="dropdown-item" href="soluciones.html#sai">SAI Inmobiliaria</a></li>
-                            <li><a class="dropdown-item" href="soluciones.html#scg">SCG Gestión</a></li>
-                            <li><a class="dropdown-item" href="soluciones.html#carto">CARTO</a></li>
-                        </ul>
-                    </li>
+                    <li class="nav-item"><a class="nav-link menu-link active" href="soluciones.html">Soluciones</a></li>
                     
-                    <li class="nav-item"><a class="nav-link menu-link" href="proyectos.html">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link menu-link" href="proyectos.html">Casos de Éxito</a></li>
                     <li class="nav-item ms-2"><a class="btn btn-dark rounded-pill px-4" href="contacto.html">Contacto</a></li>
                 </ul>
             </div>
@@ -114,118 +110,106 @@
     </nav>
 
     <header class="page-header">
-        <div class="container mt-4">
-            <h1 class="display-4 text-uppercase">Plataformas y Soluciones</h1>
-            <p class="lead">Herramientas tecnológicas de alto impacto para la administración pública y privada.</p>
+        <div class="container">
+            <h1 class="display-4 text-uppercase">Portafolio de Soluciones</h1>
+            <p class="lead opacity-75">Ingeniería de vanguardia para los retos más complejos del sector público y privado.</p>
         </div>
     </header>
 
-    <section id="cms" class="solucion-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <div class="text-uppercase text-muted small fw-bold mb-2">Desarrollo Web y Comunicación</div>
-                    <h2 class="display-5 mb-4" style="color: var(--azul-oscuro);">CMS Central</h2>
-                    <p class="lead">Ecosistema multiplataforma de administración de imagen y contenido de portales públicos informativos.</p>
-                    <p>Aplicación web privada cuya función es coordinar y administrar el contenido, estilos, código, logos, e imágenes de múltiples sitios. Permite crear una red de aplicaciones web con navegación intuitiva y experiencia de usuario (UX) unificada.</p>
-                    
-                    <ul class="list-unstyled feature-list mt-4">
-                        <li><i class="bi bi-check-circle-fill"></i> <div><strong>Control Central:</strong> Administración centralizada y control de código/estilo.</div></li>
-                        <li><i class="bi bi-check-circle-fill"></i> <div><strong>Portal Principal:</strong> Sitio web público alimentado por la red de portales.</div></li>
-                        <li><i class="bi bi-check-circle-fill"></i> <div><strong>Portales de Dependencia:</strong> Sitios administrados de manera independiente pero gobernados visualmente por el control central.</div></li>
-                        <li><i class="bi bi-check-circle-fill"></i> <div><strong>Personalización:</strong> Gestión avanzada de roles de usuario (Titular, Apoyo, Administrador).</div></li>
-                    </ul>
-                </div>
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="row g-4">
+                
                 <div class="col-lg-6">
-                    <div class="solucion-img">
-                        <img src="img/CMS.png" alt="CMS Central" onerror="this.style.display='none'">
+                    <div class="card solucion-card p-4 p-md-5">
+                        <div class="icon-box"><i class="bi bi-geo-alt-fill"></i></div>
+                        <div>
+                            <span class="badge-tech">CARTO Partner</span>
+                            <span class="badge-tech">SIG / GIS</span>
+                        </div>
+                        <h2 class="h3 mb-3 mt-2">Inteligencia Geoespacial (Location Intelligence)</h2>
+                        <p class="text-muted flex-grow-1">Implementación de Sistemas de Información Geográfica correlacionados con geo-alertas y paneles de control territoriales en tiempo real. Especialistas en análisis masivo de capas vectoriales para seguridad y fiscalización.</p>
+                        <ul class="list-unstyled mt-3 small text-secondary mb-0">
+                            <li><i class="bi bi-check2-circle me-2 text-success"></i>Visualización de incidencia delictiva vs servicios urbanos.</li>
+                            <li><i class="bi bi-check2-circle me-2 text-success"></i>Optimización de flotas y telemetría avanzada.</li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="sai" class="solucion-section">
-        <div class="container">
-            <div class="row align-items-center flex-lg-row-reverse">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <div class="text-uppercase text-muted small fw-bold mb-2">Gestión Tributaria y e-Finanzas</div>
-                    <h2 class="display-5 mb-4" style="color: var(--azul-oscuro);">SAI Inmobiliaria</h2>
-                    <p class="lead">Sistema multiplataforma de Control Predial y Recaudación omnicanal.</p>
-                    <p>Aplicación modular para el manejo integral de los servicios prediales: recursos, recaudación, trámites y contribuyentes. Desarrollado en módulos interconectables que tienen como finalidad un óptimo manejo de los servicios e incremento de ingresos gubernamentales (PIBE).</p>
-                    
-                    <ul class="list-unstyled feature-list mt-4">
-                        <li><i class="bi bi-check-circle-fill"></i> <div><strong>Módulos Básicos Internos:</strong> Control territorial preciso, tipo de suelo y padrón de contribuyentes.</div></li>
-                        <li><i class="bi bi-check-circle-fill"></i> <div><strong>Control y Recaudación:</strong> Gestión transparente de recursos financieros con detección de omisos.</div></li>
-                        <li><i class="bi bi-check-circle-fill"></i> <div><strong>Módulos Públicos:</strong> Portal ciudadano 24/7/365 para trámites, servicios y consultas de situación predial.</div></li>
-                    </ul>
-                </div>
                 <div class="col-lg-6">
-                    <div class="solucion-img">
-                        <img src="img/SAI_inmobiliaria.png" alt="SAI Inmobiliaria" onerror="this.style.display='none'">
+                    <div class="card solucion-card p-4 p-md-5">
+                        <div class="icon-box"><i class="bi bi-cpu-fill"></i></div>
+                        <div>
+                            <span class="badge-tech">AlphaManaged</span>
+                            <span class="badge-tech">Omnicanal</span>
+                        </div>
+                        <h2 class="h3 mb-3 mt-2">CMS y Digitalización</h2>
+                        <p class="text-muted flex-grow-1">Ecosistema centralizado para la administración de redes de portales públicos con UX unificada y alta seguridad. Automatización de trámites ciudadanos mediante plataformas omnicanal (Web, App, Kioscos).</p>
+                        <ul class="list-unstyled mt-3 small text-secondary mb-0">
+                            <li><i class="bi bi-check2-circle me-2 text-success"></i>Modernización del modelo de atención ciudadana (IMSS Digital).</li>
+                            <li><i class="bi bi-check2-circle me-2 text-success"></i>Gestión documental electrónica y cero papel.</li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="scg" class="solucion-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <div class="text-uppercase text-muted small fw-bold mb-2">Administración y Procesos</div>
-                    <h2 class="display-5 mb-4" style="color: var(--azul-oscuro);">Sistema de Control de Gestión (SCG)</h2>
-                    <p class="lead">Aplicación de Gestión Documental para la optimización del flujo informativo y reducción burocrática.</p>
-                    <p>Facilita a los usuarios de diferentes departamentos de una empresa o dependencia la transmisión de documentos entre áreas, poder turnarlos a través de su estructura jerárquica, y llevar un seguimiento detallado con reportes de productividad en tiempo real.</p>
-                    
-                    <ul class="list-unstyled feature-list mt-4">
-                        <li><i class="bi bi-check-circle-fill"></i> <div><strong>Cero Papel:</strong> Ahorros significativos y sostenibilidad mediante uso extensivo de firma electrónica y archivos digitales.</div></li>
-                        <li><i class="bi bi-check-circle-fill"></i> <div><strong>Trazabilidad:</strong> Monitoreo exacto de dónde y con quién se encuentra cada documento dentro de la dependencia.</div></li>
-                        <li><i class="bi bi-check-circle-fill"></i> <div><strong>Eficiencia Operativa:</strong> Reducción de tiempos de respuesta hacia el ciudadano y auditoría de procesos.</div></li>
-                    </ul>
-                </div>
                 <div class="col-lg-6">
-                    <div class="solucion-img">
-                        <img src="img/Control_gestion.png" alt="Sistema de Control de Gestión" onerror="this.style.display='none'">
+                    <div class="card solucion-card p-4 p-md-5">
+                        <div class="icon-box"><i class="bi bi-bank"></i></div>
+                        <div>
+                            <span class="badge-tech">SAP HANA / FIORI</span>
+                            <span class="badge-tech">Oracle GRP</span>
+                        </div>
+                        <h2 class="h3 mb-3 mt-2">Planeación de Recursos (GRP & SAP)</h2>
+                        <p class="text-muted flex-grow-1">Consultoría e implementación de soluciones Backoffice para el control presupuestal, contable y logístico integral. Expertos en asegurar el cumplimiento normativo de la Ley General de Contabilidad Gubernamental.</p>
+                        <ul class="list-unstyled mt-3 small text-secondary mb-0">
+                            <li><i class="bi bi-check2-circle me-2 text-success"></i>Soporte a ecosistemas masivos (+100 Unidades Ejecutoras).</li>
+                            <li><i class="bi bi-check2-circle me-2 text-success"></i>Trazabilidad total de momentos contables y transparencia proactiva.</li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="carto" class="solucion-section">
-        <div class="container">
-            <div class="row align-items-center flex-lg-row-reverse">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <div class="text-uppercase text-muted small fw-bold mb-2">Location Intelligence / Inteligencia Geoespacial</div>
-                    <h2 class="display-5 mb-4" style="color: var(--azul-oscuro);">CARTO</h2>
-                    <p class="lead">Visualización de datos territoriales y análisis avanzado para el empoderamiento de Ciudades Inteligentes.</p>
-                    <p>Como Partner Certificado de Carto Inc., implementamos plataformas que cruzan bases de datos complejas para identificar patrones. Es la herramienta líder mundial para proyectos de e-Seguridad (sensorización de flotas), e-Gobierno (cobro de impuestos prediales) e identificación de riesgos operativos.</p>
-                    
-                    <ul class="list-unstyled feature-list mt-4">
-                        <li><i class="bi bi-check-circle-fill"></i> <div><strong>Paneles en Tiempo Real:</strong> Desarrollo de dashboards con geo-alertas para reacciones operativas inmediatas de seguridad ciudadana.</div></li>
-                        <li><i class="bi bi-check-circle-fill"></i> <div><strong>Cruce de Algoritmos:</strong> Correlación de eventos territoriales para modelos predictivos y prevención de riesgos.</div></li>
-                        <li><i class="bi bi-check-circle-fill"></i> <div><strong>Gobernanza de Datos:</strong> Capacidad técnica para albergar, interpretar y compartir cientos de capas de datos institucionales de manera segura.</div></li>
-                    </ul>
-                </div>
                 <div class="col-lg-6">
-                    <div class="solucion-img">
-                        <img src="img/carto.png" alt="Carto Inc. Inteligencia Geoespacial" style="mix-blend-mode: multiply;" onerror="this.style.display='none'">
+                    <div class="card solucion-card p-4 p-md-5">
+                        <div class="icon-box"><i class="bi bi-shield-lock-fill"></i></div>
+                        <div>
+                            <span class="badge-tech">Nube Privada</span>
+                            <span class="badge-tech">Soberanía de Datos</span>
+                        </div>
+                        <h2 class="h3 mb-3 mt-2">Infraestructura y Ciberseguridad</h2>
+                        <p class="text-muted flex-grow-1">Diseño de arquitecturas escalables On-Premise (Bare Metal) y Cloud, garantizando la soberanía tecnológica del Estado. Implementación de protocolos criptográficos y telemetría para infraestructuras críticas.</p>
+                        <ul class="list-unstyled mt-3 small text-secondary mb-0">
+                            <li><i class="bi bi-check2-circle me-2 text-success"></i>Independencia de nubes públicas extranjeras según requerimiento.</li>
+                            <li><i class="bi bi-check2-circle me-2 text-success"></i>Cifrado End-to-End y auditoría en tiempo real.</li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="bg-light py-5 text-center">
-        <div class="container">
-            <h3 class="mb-4" style="color: var(--azul-oscuro);">¿Buscas modernizar tu administración con soluciones de TI robustas?</h3>
-            <a href="contacto.html" class="btn btn-lg px-5 rounded-pill mt-2" style="background-color: var(--azul-argento); color: white;">Agenda una demostración hoy</a>
+            </div>
         </div>
     </section>
 
     <footer>
         <div class="container text-center">
+            <div class="row">
+                <div class="col-md-4 text-md-start mb-4">
+                    <h5>ARGENTO</h5>
+                    <p class="small mt-3">Manuel María Contreras 133 P.B.<br>Edificio CONCAMIN, Col. Cuauhtémoc, CDMX.<br>Tel: 55 2121 7478 </p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>ENLACES RÁPIDOS</h5>
+                    <ul class="list-unstyled mt-3">
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <a href="#" class="fs-4 me-3"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="fs-4 me-3"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="fs-4"><i class="bi bi-twitter"></i></a>
+                </div>
+            </div>
+            <hr class="my-4" style="opacity: 0.2;">
             <p class="small mb-0">© 2026 Argento Technology Innovation. Todos los derechos reservados.</p>
         </div>
     </footer>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Argento | Nuestros Partners</title>
-    <link rel="icon" href="favicon.png" type="image/png">
+    <title>Argento | Alianzas</title>
+    <link rel="icon" href="img/favicon.png" type="image/png">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -18,49 +18,75 @@
         body { font-family: 'Roboto', sans-serif; color: var(--azul-oscuro); background-color: #f8f9fa; }
         h1, h2, h3, h4, h5, .nav-link, .btn { font-family: 'Montserrat', sans-serif; font-weight: 700; }
 
-        /* Navegación */
         .navbar { background-color: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .nav-link.menu-link { color: var(--azul-argento) !important; text-transform: uppercase; font-size: 0.85rem; font-weight: bold; letter-spacing: 1px; }
+        .nav-link.menu-link { color: var(--azul-argento) !important; text-transform: uppercase; font-size: 0.85rem; font-weight: bold; letter-spacing: 1px; transition: color 0.3s; }
         .nav-link.menu-link:hover { color: var(--azul-oscuro) !important; }
 
-        /* Cabecera Interna */
-        .page-header { background: linear-gradient(45deg, var(--azul-oscuro), var(--azul-argento)); color: white; padding: 100px 0 50px; text-align: center; }
-        
-        /* Tarjetas de Partners Principales */
-        .partner-card { border: none; border-radius: 12px; background-color: #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; padding: 40px 30px; height: 100%; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .partner-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-        
-        /* Cajas de Logos */
-        .partner-logo-box { height: 160px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; background-color: #f1f5f9; border-radius: 8px; color: #94a3b8; font-weight: bold; font-family: 'Montserrat', sans-serif; }
-        
-        /* ESTILO NUEVO: Logos en gris por defecto con transición suave */
-        .partner-logo-box img { 
-            max-height: 140px; 
-            max-width: 80%; 
-            object-fit: contain; 
-            mix-blend-mode: multiply;
-            filter: grayscale(100%);
-            opacity: 0.7;
-            transition: all 0.4s ease;
+        .page-header { background: linear-gradient(45deg, var(--azul-oscuro), var(--azul-argento)); color: white; padding: 120px 0 60px; text-align: center; }
+
+        /* Estilos de Tarjetas de Partners */
+        .partner-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px 30px;
+            height: 100%;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            border: 1px solid #e9ecef;
+        }
+        .partner-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: var(--azul-argento);
+        }
+        .partner-logo-container {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+        .partner-logo-container img {
+            max-width: 80%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .certification-badge {
+            display: inline-block;
+            background-color: var(--azul-oscuro);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 6px 15px;
+            border-radius: 50px;
+            margin-bottom: 15px;
+        }
+        .partner-desc {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-bottom: 0;
         }
 
-        /* ESTILO NUEVO: Al pasar el mouse (hover), el logo recupera su color */
-        .partner-card:hover .partner-logo-box img {
-            filter: grayscale(0%);
-            opacity: 1;
+        .certification-section {
+            background-color: var(--azul-oscuro);
+            color: white;
+            padding: 80px 0;
         }
 
-        /* Footer */
-        footer { background-color: var(--azul-argento); color: white; padding: 60px 0; margin-top: 80px; }
+        footer { background-color: var(--azul-argento); color: white; padding: 60px 0; }
         footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
     </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="logo-argento.png" alt="Argento" height="50">
+                <img src="img/logo-argento.png" alt="Argento" height="50">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -73,8 +99,8 @@
                         <a class="nav-link menu-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Nosotros</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="nosotros.html">Quiénes Somos</a></li>
-                            <li><a class="dropdown-item" href="clientes.html">Nuestros Clientes</a></li>
-                            <li><a class="dropdown-item active" href="partners.html">Partners y Alianzas</a></li>
+                            <li><a class="dropdown-item" href="clientes.html">Clientes</a></li>
+                            <li><a class="dropdown-item fw-bold" href="partners.html">Alianzas</a></li>
                         </ul>
                     </li>
 
@@ -91,7 +117,7 @@
                         </ul>
                     </li>
                     
-                    <li class="nav-item"><a class="nav-link menu-link" href="proyectos.html">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link menu-link" href="proyectos.html">Casos de Éxito</a></li>
                     <li class="nav-item ms-2"><a class="btn btn-dark rounded-pill px-4" href="contacto.html">Contacto</a></li>
                 </ul>
             </div>
@@ -99,126 +125,111 @@
     </nav>
 
     <header class="page-header">
-        <div class="container mt-4">
-            <h1 class="display-4 text-uppercase">Nuestros Partners</h1>
-            <p class="lead">Alianzas estratégicas y certificaciones tecnológicas para brindar las mejores soluciones.</p>
+        <div class="container">
+            <h1 class="display-4 text-uppercase">Alianzas Estratégicas</h1>
+            <p class="lead opacity-75">Respaldados por los líderes globales en tecnología.</p>
         </div>
     </header>
 
-    <section class="container py-5 mt-4">
-        <div class="text-center mb-5">
-            <h2 class="text-uppercase" style="color: var(--azul-oscuro);">Alianzas Tecnológicas</h2>
-            <div style="width: 80px; height: 4px; background-color: var(--azul-argento); margin: 20px auto;"></div>
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="h2 mb-3 text-uppercase" style="color: var(--azul-oscuro);">Ecosistema Tecnológico</h2>
+                <div style="width: 80px; height: 4px; background-color: var(--azul-argento); margin: 0 auto 30px;"></div>
+                <p class="lead text-muted mx-auto" style="max-width: 800px;">
+                    Para construir soluciones de misión crítica, trabajamos de la mano con los fabricantes de software y hardware más prestigiosos del mundo. Nuestras certificaciones garantizan implementaciones oficiales y seguras.
+                </p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="partner-card">
+                        <div class="partner-logo-container">
+                            <img src="img/logo-carto.png" alt="CARTO" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/e/e8/Carto_logo.svg'">
+                        </div>
+                        <span class="certification-badge">Certified Partner</span>
+                        <p class="partner-desc">Socio estratégico para el despliegue de plataformas de Location Intelligence y análisis geoespacial para Smart Cities.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="partner-card">
+                        <div class="partner-logo-container">
+                            <img src="img/logo-sap.png" alt="SAP" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg'">
+                        </div>
+                        <span class="certification-badge">Silver Integrator</span>
+                        <p class="partner-desc">Integración especializada de soluciones ERP, SAP HANA y Fiori para finanzas públicas y grandes corporativos.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="partner-card">
+                        <div class="partner-logo-container">
+                            <img src="img/logo-oracle.png" alt="Oracle" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg'">
+                        </div>
+                        <span class="certification-badge">Gold Partner</span>
+                        <p class="partner-desc">Implementación y soporte de bases de datos de alto rendimiento y ecosistemas Oracle GRP para el sector gobierno.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="partner-card">
+                        <div class="partner-logo-container">
+                            <img src="img/logo-microsoft.png" alt="Microsoft Azure" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg'">
+                        </div>
+                        <span class="certification-badge">Cloud Provider</span>
+                        <p class="partner-desc">Despliegue de arquitecturas en la nube escalables, seguras y redundantes utilizando infraestructura de Microsoft.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="partner-card">
+                        <div class="partner-logo-container">
+                            <img src="img/logo-aws.png" alt="AWS" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg'">
+                        </div>
+                        <span class="certification-badge">Consulting Partner</span>
+                        <p class="partner-desc">Consultoría y migración de ecosistemas on-premise a Amazon Web Services para máxima disponibilidad.</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
+    </section>
 
-        <div class="row g-4 justify-content-center">
-            
-            <div class="col-md-6 col-lg-4">
-                <div class="partner-card">
-                    <div class="partner-logo-box">
-                        <img src="file:///C:/Users/Caro%20Iglesias/OneDrive/Escritorio/icono%20web%202.0/LOGOTIPOS%20PARTNERS/LOGOTIPOS%20PARTNERS/microsoft.png" alt="Microsoft" onerror="this.style.display='none'">
-                    </div>
-                    <h4 class="mb-3">Microsoft</h4>
-                    <p class="text-muted small">Es una multinacional tecnológica que se ha consolidado como uno de los líderes mundiales en el desarrollo de software, servicios, dispositivos y soluciones tecnológicas.</p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="partner-card">
-                    <div class="partner-logo-box">
-                        <img src="file:///C:/Users/Caro%20Iglesias/OneDrive/Escritorio/icono%20web%202.0/LOGOTIPOS%20PARTNERS/LOGOTIPOS%20PARTNERS/huawei.png" alt="Huawei" onerror="this.style.display='none'">
-                    </div>
-                    <h4 class="mb-3">Huawei</h4>
-                    <p class="text-muted small">Es un líder mundial en infraestructura de tecnologías de la información y comunicación (TIC) y dispositivos inteligentes.</p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="partner-card">
-                    <div class="partner-logo-box">
-                        <img src="file:///C:/Users/Caro%20Iglesias/OneDrive/Escritorio/icono%20web%202.0/LOGOTIPOS%20PARTNERS/LOGOTIPOS%20PARTNERS/adobe.png" alt="Adobe" onerror="this.style.display='none'">
-                    </div>
-                    <h4 class="mb-3">Adobe</h4>
-                    <p class="text-muted small">Es una empresa líder en software tecnológico, reconocida por crear herramientas estándar en la industria para la creación, edición y publicación de contenido digital.</p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="partner-card">
-                    <div class="partner-logo-box">
-                        <img src="file:///C:/Users/Caro%20Iglesias/OneDrive/Escritorio/icono%20web%202.0/LOGOTIPOS%20PARTNERS/LOGOTIPOS%20PARTNERS/bentley.png" alt="Bentley" onerror="this.style.display='none'">
-                    </div>
-                    <h4 class="mb-3">Bentley Systems</h4>
-                    <p class="text-muted small">Es una empresa líder global dedicada al desarrollo de software de ingeniería de infraestructura.</p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="partner-card">
-                    <div class="partner-logo-box">
-                        <img src="file:///C:/Users/Caro%20Iglesias/OneDrive/Escritorio/icono%20web%202.0/LOGOTIPOS%20PARTNERS/LOGOTIPOS%20PARTNERS/ingram.png" alt="Ingram Micro" onerror="this.style.display='none'">
-                    </div>
-                    <h4 class="mb-3">Ingram Micro</h4>
-                    <p class="text-muted small">Es el mayor distribuidor de tecnología y proveedor de soluciones de TI del mundo, actuando como el motor logístico y de distribución "detrás de escena".</p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="partner-card">
-                    <div class="partner-logo-box">
-                        <img src="file:///C:/Users/Caro%20Iglesias/OneDrive/Escritorio/icono%20web%202.0/LOGOTIPOS%20PARTNERS/LOGOTIPOS%20PARTNERS/nexsys.png" alt="Nexsys" onerror="this.style.display='none'">
-                    </div>
-                    <h4 class="mb-3">Nexsys</h4>
-                    <p class="text-muted small">Intermediario estratégico entre más de 45 fabricantes líderes mundiales (como Adobe, Microsoft, IBM) y una red de socios, resellers, e integradores.</p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="partner-card">
-                    <div class="partner-logo-box">
-                        <img src="file:///C:/Users/Caro%20Iglesias/OneDrive/Escritorio/icono%20web%202.0/LOGOTIPOS%20PARTNERS/LOGOTIPOS%20PARTNERS/carto.png" alt="Carto Inc." onerror="this.style.display='none'">
-                    </div>
-                    <h4 class="mb-3">Carto Inc.</h4>
-                    <p class="text-muted small">Plataforma líder para la creación de potentes aplicaciones de inteligencia de ubicación (Location Intelligence).</p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="partner-card">
-                    <div class="partner-logo-box">
-                        <img src="file:///C:/Users/Caro%20Iglesias/OneDrive/Escritorio/icono%20web%202.0/LOGOTIPOS%20PARTNERS/LOGOTIPOS%20PARTNERS/axialtic.png" alt="Axialtic" onerror="this.style.display='none'">
-                    </div>
-                    <h4 class="mb-3">Axialtic</h4>
-                    <p class="text-muted small">Empresa con más de 15 años de experiencia en el aporte de soluciones tecnológicas innovadoras, atractivas y sencillas.</p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="partner-card">
-                    <div class="partner-logo-box">
-                        <img src="file:///C:/Users/Caro%20Iglesias/OneDrive/Escritorio/icono%20web%202.0/LOGOTIPOS%20PARTNERS/LOGOTIPOS%20PARTNERS/add4u.png" alt="add4u" onerror="this.style.display='none'">
-                    </div>
-                    <h4 class="mb-3">add4u</h4>
-                    <p class="text-muted small">Plataforma especializada en la regeneración de los servicios públicos, fomentando transparencia y mejor atención ciudadana.</p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="partner-card">
-                    <div class="partner-logo-box">
-                        <img src="file:///C:/Users/Caro%20Iglesias/OneDrive/Escritorio/Argento_varios/Argento-20230916T160257Z-001%20(1)/Argento/Sitioweb_/GIF_JPG_PNG/partners/logo-setesa.png" alt="SETESA" onerror="this.style.display='none'">
-                    </div>
-                    <h4 class="mb-3">SETESA</h4>
-                    <p class="text-muted small">Servicios de topografía, geodesia, fotogrametría y consultoría en materia agraria, social y de obras privadas y públicas.</p>
-                </div>
-            </div>
-
+    <section class="certification-section text-center">
+        <div class="container">
+            <h2 class="display-6 fw-bold mb-4" style="font-family: 'Montserrat', sans-serif;">¿Listo para trabajar con los expertos?</h2>
+            <p class="lead opacity-75 mb-5 mx-auto" style="max-width: 700px;">Nuestras certificaciones nos respaldan, pero nuestros resultados hablan por nosotros. Contáctanos hoy para una auditoría técnica.</p>
+            <a href="contacto.html" class="btn btn-outline-light btn-lg rounded-pill px-5 fw-bold" style="letter-spacing: 1px;">
+                CONTACTAR A UN CONSULTOR
+            </a>
         </div>
     </section>
 
     <footer>
         <div class="container text-center">
-            <p class="small mb-0">&copy; 2026 Argento Technology Innovation. Todos los derechos reservados.</p>
+            <div class="row">
+                <div class="col-md-4 text-md-start mb-4">
+                    <h5>ARGENTO</h5>
+                    <p class="small mt-3">Manuel María Contreras 133 P.B.<br>Edificio CONCAMIN, Col. Cuauhtémoc, CDMX.<br>Tel: 55 2121 7478 </p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>ENLACES RÁPIDOS</h5>
+                    <ul class="list-unstyled mt-3">
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <a href="#" class="fs-4 me-3"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="fs-4 me-3"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="fs-4"><i class="bi bi-twitter"></i></a>
+                </div>
+            </div>
+            <hr class="my-4" style="opacity: 0.2;">
+            <p class="small mb-0">© 2026 Argento Technology Innovation. Todos los derechos reservados.</p>
         </div>
     </footer>
 
